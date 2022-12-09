@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Türkiye İl Haritası</title>
+    <meta charset="utf-8" />
+
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+      * {
+        border: 0;
+
+        margin: 4px;
+
+        padding: 0;
+      }
+      #sehir {
+        width: 40%;
+
+        height: auto;
+
+        margin: 5% 0 0 30%;
+
+        border: 1px solid gray;
+
+        padding: 50px;
+
+        text-align: center;
+
+        font-size: 30px;
+      }
+      div {
+        display: block;
+
+        margin: 10%;
+      }
+    </style>
+  </head>
+  <body>
+    <select id="sehir" name="Sehir">
+      <option value="0">sehir seç</option>
+
+      <option value="1" class="akdeniz">Adana</option>
+
+      <option value="2" class="guneyAnadolu">Adıyaman</option>
+
+      <option value="3" class="ege">Afyonkarahisar</option>
+
+      <option value="4" class="doguAnadolu">Ağrı</option>
+
+      <option value="5" class="karadeniz">Amasya</option>
+      <option value="6" class="akdeniz">Antalya</option>
+    </select>
+    <div id="marmara">
+      <h3>Marmara Bölgesi:</h3>
+    </div>
+    <div id="karadeniz">
+      <h3>Karadeniz Bölgesi:</h3>
+    </div>
+    <div id="doguAnadolu">
+      <h3>Doğu Anadolu Bölgesi:</h3>
+    </div>
+    <div id="guneyAnadolu">
+      <h3>Güney Anadolu Bölgesi:</h3>
+    </div>
+    <div id="icAnadolu">
+      <h3>İç Anadolu Bölgesi:</h3>
+    </div>
+    <div id="akdeniz">
+      <h3>Akdeniz Bölgesi:</h3>
+    </div>
+    <div id="ege">
+      <h3>Ege Bölgesi:</h3>
+    </div>
+
+    <script>
+      var sehir = "";
+      var bolge = "";
+      var i = 1;
+      for (i; i < 82; i++) {
+        sehir = document.getElementsByTagName("option")[i];
+        bolge = sehir.className;
+        document.getElementById(bolge).innerHTML += sehir.innerHTML + "<br> ";
+      }
+    </script>
+  </body>
+</html>

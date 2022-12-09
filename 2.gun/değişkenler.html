@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let age = 34;
+      console.log(age);
+      age = 45;
+      console.log(age);
+      //var da da izin vermiyor. bir kere age tanımlnams
+      //  var age = 34;
+      console.log(age);
+      age = 45;
+      console.log(age);
+
+      // const name; bu sekilde hata verir
+      const name = "ali";
+      console.log(name);
+      var ad; //undefined
+      console.log(ad);
+
+      abc = 10; // global olarak tepeye atar kendini
+      //tanımlanmıs gibi kabul ediyor undeclared=bildirilmemiş
+      console.log(abc);
+
+      let say = 55.8547;
+      console.log(parseFloat(say));
+
+      const pi = 3;
+      const r = 5;
+      const alan = pi * r ** 2;
+      const cevre = 2 * pi * 2;
+      console.log(`Çevre: ${cevre}, Alan: ${alan} `);
+
+      let score1 = 10;
+      score1 = 20;
+      score1++;
+      let score2 = ++score1;
+      let score3 = score1++;
+      console.log(score1, score2, score3);
+      console.log(score1++);
+      console.log(score1);
+      console.log(score1++);
+      console.log(score1);
+    </script>
+  </body>
+</html>
