@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- etiket.innerHTML kullanımı!-->
+    <p id="birinci">ilk paragraf</p>
+
+    <p class="kutu">ikinci pragraf</p>
+
+    <p class="kutu">üçüncü paragraf</p>
+
+    <p>dördüncü paragraf</p>
+
+    <!-- etiket.attribute kullanımı -->
+    Futbol <input type="checkbox" id="hobi1" /><br />
+    Basketbol <input type="checkbox" id="hobi2" /><br />
+    Tenis <input type="checkbox" id="hobi3" /><br />
+
+    <input type="text" id="kimlikno" value="1202525124" /><br />
+    Ad <input type="text" id="ad" /><br />
+    Soyad <input type="text" id="soyad" /><br />
+
+    <!--  etiket.setAttribute(nitelik, değeri) kullanımı -->
+    <style>
+      .kirmizi {
+        background: red;
+        color: #fff;
+      }
+      #green {
+        background-color: green;
+      }
+
+      /* etiket.classList kullanımı */
+    </style>
+    <p id="birinci">ilk paragraf</p>
+    <p class="kutu">ikinci pragraf</p>
+    <p class="kutu">üçüncü paragraf</p>
+    <p>dördüncü paragraf</p>
+
+    <!--  etiket.style.property kullanımı -->
+    <p id="bir">Lorem, ipsum.</p>
+    <p class="kut">Lorem, ipsum dolor.</p>
+    <p class="kut">Lorem ipsum dolor sit.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <!-- etiket.classList kullanımı -->
+    <p id="birin">Lorem, ipsum.</p>
+    <p class="kut">Lorem, ipsum dolor.</p>
+    <p class="kut">Lorem ipsum dolor sit.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <script>
+      var nesne = document.querySelector("#birinci");
+      //  alert(nesne.innerHTML);
+      nesne.innerHTML = "<strong>önemli:</strong>";
+
+      var secim = document.querySelector("#hobi2");
+      secim.checked = true;
+
+      var secim = document.querySelector("#kimlikno");
+      secim.disabled = "disabled";
+
+      var nesneler = document.querySelectorAll("#birinci");
+      nesneler.forEach(function (nesne) {
+        nesne.setAttribute("id", "green");
+      });
+
+      var nesneler = document.querySelectorAll(".kutu");
+      nesneler.forEach(function (nesne) {
+        nesne.setAttribute("class", "kirmizi");
+      });
+
+      var etiket = document.getElementById("bir");
+      //etiket stilini değiştirme
+      etiket.style.color = "#4bc334";
+      etiket.style.fontSize = "36px";
+      etiket.style.fontStyle = "italic";
+      //alert(etiket.style.fontSize);
+
+      var etiket = document.querySelector("#birin");
+      etiket.classList.add("kare");
+      etiket.classList.add("kirmizi");
+      etiket.classList.toggle("gizle");
+      var i = 5;
+
+      etiket.classList.toggle("gizle", i < 10);
+      alert(etiket.classList.contains("cerceve"));
+
+      div.classList.add("cerceve", "kirmizi");
+
+      div.classList.remove("cerceve", "kirmizi");
+    </script>
+  </body>
+</html>

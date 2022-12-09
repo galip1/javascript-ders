@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- document.getElementById() -->
+    <div id="unicorn">🦄</div>
+
+    <!-- document.getElementsByTagName("p");-->
+    <p>🐱</p>
+    <p>🐰</p>
+    <p>🐯</p>
+    <p>🐧</p>
+
+    <!-- const emails = document.getElementsByName("e-posta");-->
+    <input class="epost" type="text" name="e-posta" />
+    <input id="tel" type="tel" name="telefon" />
+    <input type="date" name="tarih" />
+
+    <!-- const kuslar = document.getElementsByClassName('kusu'); -->
+    <div class="baykuş kusu">🦉</div>
+    <div class="güvercin kusu">🐦</div>
+    <div class="kartal kusu">🦅</div>
+    <div class="kedi">🐱</div>
+
+    <!--  query selector-->
+    <!-- id secerken #----- class secerken . koyulur -->
+
+    <!-- methodlar bir arada bullanılabilir -->
+    <form id="signup">
+      <input type="text" name="email" />
+      <input type="tel" name="phone" />
+      <input type="date" name="date-of-birth" />
+    </form>
+    <script>
+      const unicorn = document.getElementById("unicorn");
+      document.getElementById("unicorn").innerHTML;
+      console.log(document.getElementById("unicorn"));
+
+      const tagName = document.getElementsByTagName("p");
+      console.log(document.getElementsByTagName("p"));
+
+      const emails = document.getElementsByName("e-posta");
+      document.getElementsByTagName("*");
+      console.log(document.getElementsByName("e-posta"));
+
+      const kuslar = document.getElementsByClassName("kusu");
+      console.log(document.getElementsByClassName("kusu"));
+
+      console.log(document.getElementsByClassName("kartal kusu"));
+
+      // query selector
+      //id secerken #
+      //class secerken . koyulur
+      const email = document.querySelector(".epost");
+      console.log(document.querySelector(".epost"));
+      console.log(document.querySelector("#tel"));
+      console.log(document.querySelectorAll("#tel, .epost"));
+
+      const forms = document
+        .getElementById("signup")
+        .getElementsByTagName("input");
+
+      console.log(forms);
+
+      const inputs = document.querySelector("#signup").querySelector("input");
+      console.log(document.querySelector("#signup").querySelector("input"));
+      console.log(inputs);
+    </script>
+  </body>
+</html>
