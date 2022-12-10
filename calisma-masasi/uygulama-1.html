@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .kirmizi {
+        background: red;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>merhaba</h3>
+    <ul class="menu">
+      <li class="menu-bir">Lorem, ipsum dolor.</li>
+      <li class="menu-bir">Enim, fuga est.</li>
+      <li id="ücüncü">Harum, excepturi non?</li>
+      <li>Nesciunt, impedit mollitia.</li>
+      <li>Eligendi, ipsa fugiat.</li>
+    </ul>
+    <form action="">
+      <label for="hobi1">futbol</label>
+      <input type="checkbox" name="" id="hobi1" />
+      <label for="hobi2">voleybol</label>
+      <input type="checkbox" name="" id="hobi2" />
+      <label for="hobi3">basketbol</label>
+      <input type="checkbox" name="" id="hobi3" />
+    </form>
+
+    <h1 class="name blue">how are you?</h1>
+    <p class="mesaj">Lorem ipsum dolor sit amet.</p>
+
+    <input type="text" name="" id="name" />
+    <input type="text" name="" id="mesaj" />
+
+    <script>
+      const sonuc = document.querySelector("h3");
+      sonuc.innerText = "merhaba dünya";
+      sonuc.innerHTML = "merhaba yeni dünya";
+      sonuc.style.color = "red";
+      sonuc.classList.add = "h2";
+      console.log(sonuc);
+
+      const hoby = document.querySelector("#hobi1");
+      hoby.checked = true;
+      const hobii = document.querySelector("#hobi2");
+      hoby.disabled = "disabled";
+      console.log(hobii);
+
+      var nesneler = document.querySelectorAll(".menu-bir");
+      nesneler.forEach(function (n) {
+        n.setAttribute("class", "kirmizi");
+      });
+
+      var etiket = document.querySelector("#ücüncü");
+      etiket.style.color = "blue";
+
+      var etik = document.querySelector("#ücüncü");
+      etik.classList.add("kare-kirmizi");
+      // etik.classList.add("kirmizi");
+      var i = 5;
+      etik.classList.toggle("gizle", i < 10);
+
+      etik.classList.remove("kirmizi");
+      document.querySelector(".mesaj").classList.add("red");
+      document.querySelector(".mesaj").classList.remove("red");
+    </script>
+  </body>
+</html>
