@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //valuetype:  değer tipli değişkendir.bigınt,, string.number ve boolean valua typ tır.
+      //rem de ayrı bır kutu oluşturur
+      let x = 5;
+      let y = x;
+
+      console.log(x === y);
+      console.log(x, y);
+      x = 21;
+      console.log(x, y);
+      y = 35;
+      console.log(x, y);
+
+      //referans type=butun class lar referans typtır.
+      //classes,interfecs,object,arrays enumerations and functions....
+
+      let start1 = { size: 3, color: "red" };
+      let start2 = start1;
+      start2.color = "blue"; //blue ye döner
+      ///ayrı bir kutu oluşmaz rem de.
+
+      const car1 = { color: "red", brand: "mercedes" };
+      const car2 = car1;
+      car1.color = "blue";
+      console.log(car1 === car2);
+      console.log(car2, car1);
+
+      const comp1 = { color: "red" };
+      const comp2 = { color: "red" };
+      console.log(comp1 === comp2); ///false verir
+
+      console.log({} === {});
+      console.log({} == {});
+      console.log([] === []);
+      console.log([] == []);
+      console.log([] == {});
+      console.log({} === []);
+      console.log(null == null);
+    </script>
+  </body>
+</html>
