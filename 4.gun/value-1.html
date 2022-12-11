@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <input type="number" id="txt1" value="5" />
+
+    <form>
+      <select id="hesap">
+        <option value="topla">+</option>
+      </select>
+    </form>
+    <input type="number" id="txt2" value="8" /><br />
+
+    <button onclick="mesaj()" id="lbl">sonuc</button>
+    <!-- id=lbl uste koydygym için butnun içnde gösterdi -->
+    <label id="lbl"></label>
+    <script>
+      function mesaj() {
+        let sayi1 = document.querySelector("#txt1");
+        let sayi2 = document.querySelector("#txt2");
+        let lblEl = document.querySelector("#lbl");
+        let toplam = Number(sayi1.value) + Number(sayi1.value);
+
+        lblEl.innerHTML = toplam;
+      }
+    </script>
+  </body>
+</html>
