@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <input type="number" id="sayi1" />
+    <input type="number" id="sayi2" />
+
+    <select id="islem">
+      <option value="topla">+</option>
+      <option value="cikar">-</option>
+      <option value="carpma">*</option>
+      <option value="bol">/</option>
+    </select>
+    <button onclick="hesapMakinesi()" id="btn">Hesapla</button>
+    <br />
+    <label id="sonucYaz"></label>
+
+    <script>
+      var sonuc;
+      function hesapMakinesi() {
+        const num1 = document.querySelector("#sayi1");
+        const num2 = document.querySelector("#sayi2");
+        const islemEl = document.querySelector("#islem");
+        if (islem == "topla") {
+          sonucYaz = Number(num1) + Number(num2);
+        } else if (islem == "cikar") {
+          sonucYaz = Number(num1) - Number(num2);
+        } else if (islem == "carpma") {
+          sonucYaz = Number(num1) * Number(num2);
+        } else {
+          sonucYaz = Number(num1) / Number(num2);
+        }
+        document.querySelector("sonucYaz").innerHTML = "sonuc : " + sonucYaz;
+      }
+    </script> -->
+
+    <input type="number" id="num1" />
+
+    <select id="islem">
+      <option value="arti">+</option>
+      <option value="eksi">-</option>
+      <option value="carpim">*</option>
+      <option value="bol">/</option>
+    </select>
+
+    <input type="number" name="" id="num2" />
+
+    <button id="btn" onclick="calc()">Hesapla</button>
+
+    <label id="sonuc"></label>
+
+    <script>
+      var sonuc;
+      function calc() {
+        var num1El = document.querySelector("#num1");
+        var num2El = document.querySelector("#num2");
+        var islemEl = document.querySelector("#islem");
+        // const hesapSonucuEl = document.querySelector("#hesapSonucu");
+
+        let sayi1 = Number(num1El);
+        let sayi2 = Number(num2El);
+
+        if (islem == "arti") {
+          sonuc = sayi1 + sayi2;
+        } else if (islem == "eksi") {
+          sonuc = sayi1 - sayi2;
+        } else if (islem == "carpim") {
+          sonuc = sayi1 * sayi2;
+        } else {
+          sonuc = sayi1 / sayi2;
+        }
+        document.querySelector("#sonuc").innerHTML = sonuc;
+      }
+    </script>
+  </body>
+</html>

@@ -7,6 +7,13 @@
     <title>Document</title>
   </head>
   <body>
+    <ul class="menu">
+      <li>Lorem, ipsum.</li>
+      <li>Eum, assumenda?</li>
+      <li>Nostrum, est?</li>
+      <li>Perferendis, repellat?</li>
+      <li>Id, et.</li>
+    </ul>
     <script>
       //valuetype:  değer tipli değişkendir.bigınt,, string.number ve boolean valua typ tır.
       //rem de ayrı bır kutu oluşturur
@@ -45,6 +52,16 @@
       console.log([] == {});
       console.log({} === []);
       console.log(null == null);
+
+      const listItems = document.querySelectorAll(".menu li");
+      console.log(listItems);
+      console.log(listItems.length);
+      listItems[0].innerHTML = "Contact";
+      console.log(typeof listItems[0]);
+      console.log(typeof listItems);
+      const dizi = ["ali", 23];
+      console.log(typeof dizi);
+      console.log(typeof dizi[0]);
     </script>
   </body>
 </html>

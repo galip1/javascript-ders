@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <input
+      type="text"
+      placeholder="adınızı giriniz"
+      id="txtName"
+      value="ali gel"
+    />
+    <h1 id="welcome"></h1>
+
+    <script>
+      const nameEl = document.querySelector("#txtName");
+      const welcomeEl = document.querySelector("#welcome");
+
+      welcomeEl.innerHTML = nameEl.value;
+    </script>
+  </body>
+</html>
