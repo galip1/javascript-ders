@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <input type="number" id="Num1" />
+    <input type="number" id="Num2" />
+
+    <select id="select">
+      <option value="topla">topla</option>
+      <option value="cikar">çıkar</option>
+      <option value="carp">çarp</option>
+      <option value="bol">böl</option>
+      <option value="mod">mod</option>
+      <option value="faktoriyel">faktöriyel</option>
+
+      <option value="kare">kare</option>
+    </select>
+
+    <button id="btn" onclick="hesapla()">Hesapla</button>
+    <label id="result"></label>
+
+    <script>
+      function hesapla() {
+        const numEl1 = document.querySelector("#Num1").value;
+        const numEl2 = document.querySelector("#Num2").value;
+        const sonuc = document.querySelector("#select").value;
+        const resultEl = document.querySelector("#result");
+
+        let islemSonuc = "";
+        let number1 = Number(numEl1);
+        let number2 = Number(numEl2);
+
+        if (sonuc == "topla") {
+          islemSonuc = number1 + number2;
+        } else if (sonuc == "cikar") {
+          islemSonuc = number1 - number2;
+        } else if (sonuc == "carp") {
+          islemSonuc = number1 * number2;
+        } else if (sonuc == "bol") {
+          islemSonuc = number1 / number2;
+        } else if (sonuc == "mod") {
+          islemSonuc = number1 % number2;
+        } else if (sonuc == "faktoriyel") {
+          islemSonuc = number1;
+        } else {
+          islemSonuc = numEl1 ** 2;
+          islemSonuc = numEl2 ** 2;
+        }
+        resultEl.innerHTML = "Sonuç:" + islemSonuc;
+      }
+    </script>
+  </body>
+</html>

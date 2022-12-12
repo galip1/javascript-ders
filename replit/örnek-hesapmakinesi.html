@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="Num1" type="number" />
+    <input id="Num2" type="number" />
+
+    <select name="" id="select">
+      <option value="Toplama">Toplama</option>
+      <option value="Çıkarma">Çıkarma</option>
+      <option value="Çarpma">Çarpma</option>
+      <option value="Bölme">Bölme</option>
+    </select>
+    <input onclick="hesapla()" id="output" type="button" value="Hesapla" />
+    <label id="result" for="output"></label>
+
+    <script>
+      function hesapla() {
+        const numEl1 = document.querySelector("#Num1").value;
+        const numEl2 = document.querySelector("#Num2").value;
+        const sonuc = document.querySelector("#select").value;
+        let islemSonuc;
+        let sayi1 = Number(numEl1);
+        let sayi2 = Number(numEl2);
+
+        if (sonuc == "Toplama") {
+          islemSonuc = sayi1 + sayi2;
+        } else if (sonuc == "Çıkarma") {
+          islemSonuc = sayi1 - sayi2;
+        } else if (sonuc == "Çarpma") {
+          islemSonuc = sayi1 * sayi2;
+        } else islemSonuc = sayi1 / sayi2;
+        document.querySelector("#result").innerHTML = "Sonuç:" + islemSonuc;
+      }
+    </script>
+  </body>
+</html>

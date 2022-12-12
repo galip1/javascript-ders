@@ -7,72 +7,40 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- <input type="number" id="sayi1" />
-    <input type="number" id="sayi2" />
+    <input type="number" id="sayi1" />
 
     <select id="islem">
       <option value="topla">+</option>
       <option value="cikar">-</option>
-      <option value="carpma">*</option>
-      <option value="bol">/</option>
-    </select>
-    <button onclick="hesapMakinesi()" id="btn">Hesapla</button>
-    <br />
-    <label id="sonucYaz"></label>
-
-    <script>
-      var sonuc;
-      function hesapMakinesi() {
-        const num1 = document.querySelector("#sayi1");
-        const num2 = document.querySelector("#sayi2");
-        const islemEl = document.querySelector("#islem");
-        if (islem == "topla") {
-          sonucYaz = Number(num1) + Number(num2);
-        } else if (islem == "cikar") {
-          sonucYaz = Number(num1) - Number(num2);
-        } else if (islem == "carpma") {
-          sonucYaz = Number(num1) * Number(num2);
-        } else {
-          sonucYaz = Number(num1) / Number(num2);
-        }
-        document.querySelector("sonucYaz").innerHTML = "sonuc : " + sonucYaz;
-      }
-    </script> -->
-
-    <input type="number" id="num1" />
-
-    <select id="islem">
-      <option value="arti">+</option>
-      <option value="eksi">-</option>
-      <option value="carpim">*</option>
+      <option value="carp">*</option>
       <option value="bol">/</option>
     </select>
 
-    <input type="number" name="" id="num2" />
+    <input type="number" id="sayi2" />
 
-    <button id="btn" onclick="calc()">Hesapla</button>
+    <button id="btn" onclick="cal()">Hesapla</button>
 
     <label id="sonuc"></label>
 
     <script>
-      var sonuc;
-      function calc() {
-        var num1El = document.querySelector("#num1");
-        var num2El = document.querySelector("#num2");
-        var islemEl = document.querySelector("#islem");
-        // const hesapSonucuEl = document.querySelector("#hesapSonucu");
+      function cal() {
+        var sonuc;
 
-        let sayi1 = Number(num1El);
-        let sayi2 = Number(num2El);
+        var sayi1El = document.querySelector("#sayi1").value;
+        var sayi2El = document.querySelector("#sayi2").value;
+        var islemEl = document.querySelector("#islem").value;
 
-        if (islem == "arti") {
-          sonuc = sayi1 + sayi2;
-        } else if (islem == "eksi") {
-          sonuc = sayi1 - sayi2;
-        } else if (islem == "carpim") {
-          sonuc = sayi1 * sayi2;
+        var s1 = Number(sayi1El);
+        var s2 = Number(sayi2El);
+
+        if (islemEl == "topla") {
+         var sonuc1 = s1 + s2;
+        } else if (islemEl == "eksi") {
+        var  sonuc = s1 - s2;
+        } else if (islemEl == "carpim") {
+          sonuc = s1 * s2;
         } else {
-          sonuc = sayi1 / sayi2;
+          sonuc = s1 / s1;
         }
         document.querySelector("#sonuc").innerHTML = sonuc;
       }
