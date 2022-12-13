@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input
+      type="number"
+      name=""
+      id="txtSalary"
+      onkeydown="showMessage(event)"
+    /><br />
+
+    <input type="radio" name="status" id="txtWorker" value="worker" /><label
+      for="txtWorker"
+      >Çalışan</label
+    >
+
+    <br />
+    <input type="radio" name="status" id="txtRetired" value="retired" /><label
+      for="txtRetired"
+      >Emekli</label
+    >
+
+    <br />
+    <button id="" onclick="setMaas()" type="button">Hesapla</button>
+    <p id="sonuc"></p>
+
+    <script>
+      const salaryEl = document.querySelector("#txtSalary");
+      const sonucEl = document.querySelector("#sonuc");
+      function setMaas() {
+        const status = document.querySelector(
+          "input[name='status']:checked"
+        ).value;
+        let slry = Number(salaryEl.value);
+        if (status == "retired") {
+          slry *= 0.9;
+        } else {
+          slry *= 0.5;
+        }
+
+        // slry = status === "retired" ? slry * 0.9 : slry * 0.95;
+        sonucEl.innerHTML = slry;
+      }
+
+      function showMessage(e) {
+        if (e.keyCode === 13) {
+          console.log("entere basıldı");
+        }
+      }
+    </script>
+  </body>
+</html>

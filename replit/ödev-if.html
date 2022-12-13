@@ -5,23 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style></style>
+    <style>
+      input {
+        border: 2px solid red;
+        width: 10%;
+        height: 20px;
+        border-radius: 5px;
+      }
+      select {
+        background-color: coral;
+        margin: 5px;
+        border: 2px solid red;
+        padding: 2px;
+        border-radius: 5px;
+      }
+      option {
+        color: blue;
+      }
+      #btn {
+        padding: 4px;
+        border-radius: 5px;
+      }
+      #btn:hover {
+        background-color: aqua;
+      }
+      #result {
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
     <input type="number" id="Num1" />
-    <input type="number" id="Num2" />
 
     <select id="select">
-      <option value="topla">topla</option>
-      <option value="cikar">çıkar</option>
-      <option value="carp">çarp</option>
-      <option value="bol">böl</option>
-      <option value="mod">mod</option>
-      <option value="faktoriyel">faktöriyel</option>
-
-      <option value="kare">kare</option>
+      <option value="topla">+</option>
+      <option value="cikar">-</option>
+      <option value="carp">*</option>
+      <option value="bol">/</option>
+      <option value="mod">%</option>
     </select>
-
+    <input type="number" id="Num2" />
     <button id="btn" onclick="hesapla()">Hesapla</button>
     <label id="result"></label>
 
@@ -46,11 +69,6 @@
           islemSonuc = number1 / number2;
         } else if (sonuc == "mod") {
           islemSonuc = number1 % number2;
-        } else if (sonuc == "faktoriyel") {
-          islemSonuc = number1;
-        } else {
-          islemSonuc = numEl1 ** 2;
-          islemSonuc = numEl2 ** 2;
         }
         resultEl.innerHTML = "Sonuç:" + islemSonuc;
       }

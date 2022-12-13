@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      :root{
+        --color-dark: rgb(31, 31, 31);
+        --color-light:rgb(236, 236, 236);
+      }
+      #btn1{
+        padding: 5px;
+        border-radius: 5px ;
+        cursor: pointer;
+   
+      }
+     
+      .dark {
+        background-color: var(--color-dark);
+        color: var(--color-light);
+      }
+      .light {
+        background-color:var(--color-light);
+        color: var(--color-dark);
+      }
+      .btn-mode2{
+        padding: 5px;
+        border-radius: 5px ;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+          
+   <table >
+          <button id="btn1" class="btn-mode dark" onclick="setMode()" type="button">Dark Mode</button>
+         <button type="button" class="btn-mode2"> <i class="fa-solid fa-moon"></i></button> 
+      
+      </tr>
+      <tr>
+        <td>page backgorund color</td>
+        <td>black</td>
+        <td>White</td>
+      </tr>
+      <tr>
+        <td>page text color</td>
+        <td>White</td>
+        <td>black</td>
+      </tr>
+      <tr>
+        <td>Button background color</td>
+        <td>White</td>
+        <td>black</td>
+      </tr>
+      <tr>
+        <td>Button text color</td>
+        <td>black</td>
+        <td>White</td>
+      </tr>
+    </table>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur placeat, natus omnis, repellendus aperiam deserunt consequatur architecto officia quo excepturi eius a maxime maiores adipisci voluptatem nobis perspiciatis beatae sit exercitationem, tempora id. Esse alias sunt vitae. Magnam delectus nisi odit amet sapiente earum. Cumque, non ducimus itaque maxime error libero distinctio corporis. Placeat consectetur nisi magni facilis nihil dolorem accusamus possimus necessitatibus numquam sequi, quod quo saepe asperiores, alias quisquam architecto maiores vel tenetur, ut neque ratione assumenda dolorum culpa dignissimos! Debitis laborum illum suscipit minus, atque unde recusandae! Illum officia autem quis molestias in ipsam tempora possimus voluptates!</p>
+    <script>
+
+let mode="light"// default
+const body=document.querySelector("body")// nereye eklemek istiyorsam onun parenti
+
+      function setMode() {
+        if(mode=="light"){ 
+          body.classList.remove("light")//light kalksın ki dark görevini yapsın.ayrıca light body e daha yakın.
+        body.classList.add("dark")
+        mode="dark"
+     //else kısmına mode farklı oldugu aman girer. yani light ten dark dönmesi gerek
+        } 
+        else{ body.classList.remove("dark")
+        body.classList.add("light")
+        mode="light"
+       
+      }
+      
+      }
+     
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--  -->
+    <input type="number" oninput="fiyat()" id="num" />
+    <button id="btn" onclick="fiyat()">hesapla</button>
+    <label id="göster"></label>
+    <script>
+      function fiyat() {
+        var price = document.querySelector("#num");
+        var gösterEl = document.querySelector("#göster");
+        var priceEl = Number(price.value);
+
+        if (priceEl > 500) {
+          priceEl *= 0.9;
+        }
+
+        gösterEl.innerHTML = priceEl;
+      }
+    </script>
+  </body>
+</html>

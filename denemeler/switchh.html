@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" name="" id="puan" />
+    <h1 id="sonuc"></h1>
+    <button class="btn" onclick="setCalcul()">Derece</button>
+
+    <script>
+      const puanElement = document.querySelector("#puan");
+      const sonucEl = document.querySelector("#sonuc");
+
+      function setCalcul() {
+        let puanEl = Number(puanElement.value);
+        let mesaj;
+
+        switch (true) {
+          case puanEl > 80:
+            mesaj = 1;
+            alert("tebrikler 1.siniz");
+
+            break;
+          case puanEl > 75:
+            mesaj = 2;
+            alert("tebrikler 2.siniz");
+            break;
+          case puanEl > 70:
+            mesaj = 3;
+
+            break;
+          case puanEl > 65:
+            mesaj = 4;
+
+            break;
+          case puanEl > 60:
+            mesaj = 5;
+
+          default:
+        }
+
+        sonucEl.innerHTML = puanEl;
+      }
+    </script>
+  </body>
+</html>

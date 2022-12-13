@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" name="" id="kenar1" />
+    <input type="number" name="" id="kenar2" />
+    <button onclick="setAlan()" id="btn">Hesapla</button>
+    <label for="" id="result"></label>
+
+    <script>
+      const k1 = document.querySelector("#kenar1");
+      const k2 = document.querySelector("#kenar2");
+      const resultEl = document.querySelector("#result");
+      let alan;
+      function setAlan() {
+        let k1El = Number(k1.value);
+        let k2El = Number(k2.value);
+        alan = k1El * k2El;
+        resultEl.innerHTML = alan;
+      }
+      let sonuc = {
+        uzunKenar: "k1El",
+        kisaKenar: "k2El",
+        alani: " k1El * k2El",
+      };
+      let alanDikdortgen;
+      alanDikdortgen =
+        user === null || user === undefined ? "anonymous" : `${sonuc.alani} `;
+
+      console.log(alanDikdortgen);
+
+      //   alanDikdortgen ?? "Anonymous":
+      //   console.log(alanDikdortgen);
+    </script>
+  </body>
+</html>
