@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: bisque;
+      }
+      .container {
+        margin: 3rem;
+        text-align: center;
+        width: 300px;
+        border: 3px solid black;
+      }
+      .container div {
+        padding: 1rem;
+      }
+      .red {
+        background-color: red;
+      }
+      .white {
+        background-color: white;
+      }
+      .blue {
+        background-color: blue;
+      }
+      .black {
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="kutu">
+        <div class="red">SİYAH</div>
+        <div class="white">KIRMIZI</div>
+        <div class="blue">BEYAZ</div>
+        <div class="black">MAVİ</div>
+      </div>
+    </div>
+    <div class="container" id="yanlis"></div>
+
+    <script>
+      const red = document.querySelector(".red");
+      const white = document.querySelector(".white");
+      const black = document.querySelector(".black");
+      const blue = document.querySelector(".blue");
+
+      const yanlis = document.querySelector("#yanlis");
+
+      red.innerHTML = "RED";
+      white.innerHTML = "WHITE";
+      blue.innerHTML = "BLUE";
+      black.innerHTML = "BLACK";
+
+      let yanlisHali = `<div class="kutu">
+        <div class="red">SİYAH</div>
+        <div class="white">KIRMIZI</div>
+        <div class="blue">BEYAZ</div>
+        <div class="black">MAVİ</div>
+      </div>     `;
+
+      yanlis.innerHTML = ` <h1 style=color:red; text-align:center>Renkler </h1> ${yanlisHali}`;
+    </script>
+  </body>
+</html>

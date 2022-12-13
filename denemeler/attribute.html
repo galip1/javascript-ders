@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .kirmizi {
+        background: red;
+        font-weight: bold;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    Futbol <input type="checkbox" id="hobi1" /><br />
+
+    Basketbol <input type="checkbox" id="hobi2" /><br />
+
+    Tenis <input type="checkbox" id="hobi3" /><br />
+    <br /><br /><br /><br /><br />
+    <p id="birinci">ilk paragraf</p>
+
+    <p class="kutu">ikinci pragraf</p>
+
+    <p class="kutu">üçüncü paragraf</p>
+
+    <p>dördüncü paragraf</p>
+    <br /><br /><br /><br /><br />
+    <select id="takim">
+      <option value="1">Galatasaray</option>
+    </select>
+    <script>
+      var secim = document.querySelector("#hobi1");
+      secim.checked = true;
+      secim.disabled = "disbled";
+
+      var nesneler = document.querySelectorAll(".kutu");
+      nesneler.forEach(function (nesne) {
+        nesne.setAttribute("class", "kirmizi");
+      });
+
+      var etiket = document.querySelector("#birinci");
+      etiket.style.color = "blue";
+
+      etiket.classList.add("ikinci");
+      etiket.classList.remove("ikinci");
+    </script>
+  </body>
+</html>

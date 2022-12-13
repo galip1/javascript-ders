@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --color-dark: rgb(31, 31, 31);
+        --color-light: rgb(236, 236, 236);
+      }
+      .btn-mode {
+        padding: 0.5rem 1rem;
+        border-radius: 0.3rem;
+        cursor: pointer;
+      }
+      .dark {
+        background-color: var(--color-dark);
+        color: var(--color-light);
+      }
+      .light {
+        background-color: var(--color-light);
+        color: var(--color-dark);
+      }
+    </style>
+  </head>
+  <body class="light">
+    <button class="btn-mod dark" onclick="setMode()">Dark</button>
+    <p>
+      doloribus nemo illo nam dolorem debitis necessitatibus nobis voluptatem
+      eius! Officia cupiditate, nisi nemo non veniam architecto rerum incidunt
+      facilis amet, omnis quisquam est explicabo. Magni maxime quasi sapiente
+      debitis quae autem dolor. Nemo quae atque odio deserunt, soluta adipisci
+      consectetur numquam voluptate, eveniet saepe ex, placeat iure quos
+      aspernatur vel asperiores magnam labore dignissimos sequi exercitationem
+      qui iste nesciunt. Quos, eum maiores? Fugit autem molestias nisi sint
+      atque deleniti? Impedit dolorum neque, tenetur porro quis ipsum sequi
+      quibusdam cupiditate fugit molestiae animi dignissimos repellendus, veniam
+      possimus odio eaque illum alias, corporis minima quos. Incidunt, officia!
+      Perferendis necessitatibus atque exercitationem eum, porro excepturi
+      consequatur accusamus animi nesciunt. Deserunt doloremque soluta repellat
+      necessitatibus aliquam aliquid rerum esse sed, expedita natus quia quidem.
+      Suscipit distinctio aliquam perspiciatis qui reiciendis deleniti ad magnam
+      accusamus blanditiis odio incidunt ea asperiores, a impedit iste! Nam
+      optio iure dicta voluptatibus harum culpa vitae sunt mollitia fugit
+      maiores incidunt consequatur aut deserunt eligendi voluptatum nulla
+      repellendus inventore nobis, nisi, porro illo explicabo! Eum cumque
+      expedita tenetur laboriosam consequuntur alias provident, ipsam dolorem
+      dolorum eligendi sapiente deleniti quibusdam minima possimus a aut qui?
+      Ipsam impedit eaque a quod assumenda, sit dolore, ipsa modi veniam
+      repellendus non consequatur harum exercitationem atque dolorem iusto autem
+      tempora qui perspiciatis unde, nam dignissimos molestias veritatis. Amet
+      unde libero culpa eaque similique veniam suscipit aspernatur, quos
+      molestias, omnis est?
+    </p>
+    <script>
+      let mode = "light";
+      const bodyEl = document.querySelector("body");
+      function setMode() {
+        if (mode == "light") {
+          bodyEl.classList.remove("light");
+          bodyEl.classList.add("dark");
+          mode = "dark";
+        } else {
+          bodyEl.classList.remove("dark");
+          bodyEl.classList.add("light");
+          mode = "light";
+        }
+      }
+    </script>
+  </body>
+</html>
