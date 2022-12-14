@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="age" value="18" />
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+      const age = document.querySelector("#age");
+      const demos = document.querySelector("#demo");
+
+      function myFunction() {
+        let ages = Number(age.value);
+        let voteable = ages < 18 ? "Too young" : "Old enough";
+        demos.innerHTML = voteable + " to vote.";
+      }
+    </script>
+  </body>
+</html>

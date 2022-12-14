@@ -9,32 +9,23 @@
   <body>
     <script>
       let user = {
-        firstName: "ali",
-        lastName: "veli",
+        firstName: "Ali",
+        lastName: "Veli",
       };
+      //  user = null;
+      //IF METHOD
+      /*
+        if (user === null || user === undefined) {
+          user = { firstName: "Anonymous", lastName: "" };
+        }
+        */
+      // TERNARY METHOD
+      //user = user === null ||  user===undefined ? { firstName: "Anonymous", lastName: "" } : user
+      //NULLISH
 
-      // user = null; //şeklinde de gelebilir.. user null olursa direkt anonymous olur
-
-      let displayName = ""; //genelde ad ve soyadı bu sekilde tanımlarlar
-      // if method
-      /*  if (user == null) {
-                  displayName = "Anonymous";
-                } else {
-                  displayName = `${user.firstName} ${user.lastName} `;
-                }
-
-                console.log(displayName);*/
-
-      //ternary method -- bittikten sonra user=null kısmını kaldır .ali veli yazacak
-      /* displayName =
-        user === null || user === undefined
-          ? "anonymous"
-          : `${user.firstName} ${user.lastName} `;
-
-      console.log(displayName);*/
-
-      //nullish method.. once dene user==null değili.
-      displayName = user ?? "anonymous"; // aynı ture esitlemeye calıs. user-objext,, anony ise strıng
+      // 2.user null vya undefined olup olmadıgı kontrol eder.eger null veya und ise ?? den sonrakını dikkate alır. ve ilk user e atar.
+      user = user ?? { firstName: "Anonymous", lastName: "" };
+      const displayName = `${user.firstName} ${user.lastName}`;
       console.log(displayName);
     </script>
   </body>
