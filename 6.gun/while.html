@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" id="txtNumber" />
+    <button onclick="calculate()">Calculate</button>
+    <h3 id="sonuc"></h3>
+    <script>
+      const numberEl = document.querySelector("#txtNumber");
+      const sonuc = document.querySelector("#sonuc");
+      //5438 girilen sayı
+      function calculate() {
+        let total = 0;
+        let num = Number(numberEl.value);
+        num = Math.abs(num); //eksili sayıyı atar
+
+        while (num > 0) {
+          const digit = num % 10;
+          total += digit;
+          num = Math.floor(num / 10); //her on a bölümünden virgülü atar ve on a bölüp kalan sayıyı tplr
+        }
+        alert(total);
+        sonuc.innerHTML = total;
+      }
+    </script>
+  </body>
+</html>

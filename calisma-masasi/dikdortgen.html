@@ -7,35 +7,41 @@
     <title>Document</title>
   </head>
   <body>
-    <input type="number" name="" id="kenar1" />
-    <input type="number" name="" id="kenar2" />
-    <button onclick="setAlan()" id="btn">Hesapla</button>
-    <label for="" id="result"></label>
-
+    <input type="number" id="txtNumber" />
+    <button onclick="calculate()">Calculate</button>
     <script>
-      const k1 = document.querySelector("#kenar1");
-      const k2 = document.querySelector("#kenar2");
-      const resultEl = document.querySelector("#result");
-      let alan;
-      function setAlan() {
-        let k1El = Number(k1.value);
-        let k2El = Number(k2.value);
-        alan = k1El * k2El;
-        resultEl.innerHTML = alan;
+      const numberEl = document.querySelector("#txtNumber");
+      function calculate() {
+        let num = Number(numberEl.value);
+        //   if (num < 0) {
+        //     alert("Please enter greater than zero");
+        //     return;
+        //   }
+        //   if (num == 0) {
+        //     num = 1;
+        //   }
+
+        let factoriel = 1; // çarpma da 0 da olacag ıcın 1 den baslatılır
+        //   //6!=6*5*4*3*2*1;
+        //   do {
+        //     factoriel *= num;
+        //     num--;
+        //   } while (num > 1);
+        //   alert(factoriel);
+
+        if (num < 0) {
+          console.log("Lütfen pozitif bir tamsayı giriniz!");
+        } else {
+          for (let i = 1; i <= num; i++) {
+            faktoriel = faktoriel * i;
+          }
+        }
+        console.log("Faktöriyel : " + faktoriel);
       }
-      let sonuc = {
-        uzunKenar: "k1El",
-        kisaKenar: "k2El",
-        alani: " k1El * k2El",
-      };
-      let alanDikdortgen;
-      alanDikdortgen =
-        user === null || user === undefined ? "anonymous" : `${sonuc.alani} `;
 
-      console.log(alanDikdortgen);
+      //let sayi = prompt("Lütfen bir sayı giriniz.");
 
-      //   alanDikdortgen ?? "Anonymous":
-      //   console.log(alanDikdortgen);
+      //let faktoriyel = 1;
     </script>
   </body>
 </html>
