@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" name="" id="number" />
+    <button onclick="isPalindrome(x)">Hesapla</button>
+
+    <script>
+      const isPalindrome = (x) => {
+        if (x < 0 || (x % 10 === 0 && x !== 0)) {
+          return false;
+        }
+
+        return x === reverse(x);
+      };
+
+      const reverse = (num) => {
+        let rev = 0;
+
+        while (num != 0) {
+          rev = rev * 10 + (num % 10);
+          num = parseInt(num / 10, 10);
+        }
+
+        return rev;
+      };
+
+      console.log(isPalindrome(121));
+
+      /*  function checkPalindrome(string) {
+        // find the length of a string
+        const len = string.length;
+
+        // loop through half of the string
+        for (let i = 0; i < len / 2; i++) {
+          // check if first and last string are same
+          if (string[i] !== string[len - 1 - i]) {
+            return "It is not a palindrome";
+          }
+        }
+        return "It is a palindrome";
+      }
+
+      // take input
+      const string = prompt("Enter a string: ");
+
+      // call the function
+      const value = checkPalindrome(string);
+
+      console.log(value);*/
+    </script>
+  </body>
+</html>

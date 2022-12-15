@@ -7,41 +7,14 @@
     <title>Document</title>
   </head>
   <body>
-    <input type="number" id="txtNumber" />
-    <button onclick="calculate()">Calculate</button>
     <script>
-      const numberEl = document.querySelector("#txtNumber");
-      function calculate() {
-        let num = Number(numberEl.value);
-        //   if (num < 0) {
-        //     alert("Please enter greater than zero");
-        //     return;
-        //   }
-        //   if (num == 0) {
-        //     num = 1;
-        //   }
+      let globalScopeVariable = 33;
 
-        let factoriel = 1; // çarpma da 0 da olacag ıcın 1 den baslatılır
-        //   //6!=6*5*4*3*2*1;
-        //   do {
-        //     factoriel *= num;
-        //     num--;
-        //   } while (num > 1);
-        //   alert(factoriel);
-
-        if (num < 0) {
-          console.log("Lütfen pozitif bir tamsayı giriniz!");
-        } else {
-          for (let i = 1; i <= num; i++) {
-            faktoriel = faktoriel * i;
-          }
-        }
-        console.log("Faktöriyel : " + faktoriel);
-      }
-
-      //let sayi = prompt("Lütfen bir sayı giriniz.");
-
-      //let faktoriyel = 1;
+      const test1 = () => {
+        let functionScopeVariable = 22;
+        console.log(globalScopeVariable + functionScopeVariable);
+      };
+      test1();
     </script>
   </body>
 </html>

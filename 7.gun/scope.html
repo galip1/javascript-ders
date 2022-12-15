@@ -10,11 +10,14 @@
     <script>
       let globalScopeVariable = 33;
       let x = 5;
+
       const test1 = () => {
-        let functionScopeVariable = 22;
+        let functionScopeVariable = 22; // function içinde gcerli
         let x = 11;
         console.log(globalScopeVariable + functionScopeVariable);
         console.log("x:", x);
+
+        //block scope
         if (functionScopeVariable > 10) {
           const blockScopeVariable = 18;
           console.log("tax:", blockScopeVariable);
@@ -24,7 +27,7 @@
       test1();
       console.log(globalScopeVariable);
       //console.log(functionScopeVariable);
-      console.log("x:", x);
+      console.log("x:", ++x);
     </script>
   </body>
 </html>

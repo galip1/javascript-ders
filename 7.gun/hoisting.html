@@ -29,8 +29,14 @@
       function test() {
         console.log(y);
         var y = 5;
+        return y;
       }
       test();
+
+      const z = test();
+      console.log(z);
+      const m = test;
+      console.log(m);
     </script>
   </body>
 </html>

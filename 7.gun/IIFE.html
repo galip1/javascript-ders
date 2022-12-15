@@ -8,17 +8,23 @@
   </head>
   <body>
     <script>
+      //klasık yontem
       alert("Hello");
       function sayHello1() {
         alert("Hello 1");
       }
       sayHello1();
+
       // IIFE
       (function () {
         alert("Hello2");
       })();
       !(function () {
         alert("Hello3");
+      })();
+
+      (function () {
+        alert("hello4");
       })();
     </script>
     <!--
