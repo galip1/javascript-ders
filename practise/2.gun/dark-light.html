@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        padding: 1rem;
+        width: 30%;
+      }
+      #icerik {
+        padding: 0.8rem;
+      }
+      .renk1 {
+        background-color: yellow;
+        color: blue;
+      }
+      .renk2 {
+        background-color: blue;
+        color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="icerik" class="renk1">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus dolore
+        vitae quas in delectus beatae officia incidunt cupiditate aliquam. Sed
+        dolorum eius labore, veritatis nemo placeat, quam cumque facilis porro
+        animi tenetur suscipit aspernatur consequuntur. Consequatur, eius.
+        Voluptatum suscipit, sunt, exercitationem ex, explicabo laudantium quo
+        totam architecto iusto quaerat provident?
+      </div>
+    </div>
+    <button id="btn-degistir" class="renk2" onclick="degistir()">Renk</button>
+    <script>
+      //Butona tıklayınca içeriğin ve butonun arkaplan ve metin renkleri yer değiştirsin.
+      let mode = true;
+      function degistir() {
+        const icerik = document.querySelector("#icerik").classList;
+        const button = document.querySelector("#btn-degistir").classList;
+
+        if (mode) {
+          icerik.remove("renk1");
+          icerik.add("renk2");
+          button.remove("renk2");
+          button.add("renk1");
+        } else {
+          icerik.remove("renk2");
+          icerik.add("renk1");
+          button.remove("renk1");
+          button.add("renk2");
+        }
+        mode = !mode;
+      }
+    </script>
+  </body>
+</html>

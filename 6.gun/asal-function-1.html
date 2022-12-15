@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" id="txtNumber" />
+    <button onclick="calculate()">Calculate</button>
+    <script>
+      const numberEl = document.querySelector("#txtNumber");
+      function calculate() {
+        const result = isPrimeNumber(numberEl.value);
+
+        //mesela 10 sayısını girdik. calculateye bastıktan sonra
+        // bu fonksiyon isprmenumber adlı fonksıyonu cagırır ve
+        //değer olarak numberel.value deki değeri götürür.yani 10 u.
+        alert(`The number you entered is ${result ? "" : "not"} prime`);
+      }
+
+      //jenerik fonksiyon.
+      //buradakı num, degerini yukardan alır.isPrimeNumber(numberEl.value)
+
+      function isPrimeNumber(num) {
+        if (!num || isNaN(num) || num < 2) return false; // buarya istsinaları yani şartları yazdık.
+        //false. return un break ı gibidir.genelde bu durum fonk basınd ayapılır ve olumsuz deger döndurukur.
+        // return fonksiyonu çağrıldığı yere döndürür.
+        let flag = true; //ilk deger.
+        //ilk degere burada sen asal sın denıyor.kendini asagıda ispat et asal olup olmadıgını.
+        // yada false denır o zaman tersi olur.
+        //burada amac bı sayının asal olup lamadıgını bulmak.kendine ve 1 e bölüncek
+
+        //10 verdiğimizi abul edeli.
+        //i buarda 2-9 arası olacak.ve her defasında 10 a bölme işlemi gercekleşir.
+        // 7 sayısı asal oldugu ucun asagıdakı return den yukarı gönderilir. flag vs ugramaz.
+        for (let i = 2; i < num; i++) {
+          if (num % i === 0) {
+            //10 un 2 ye bölundugu ıcın asal olmaz.ve dönguyu kırar.
+            flag = false;
+            break; // döngüyü kırar. dongudenn cıkıar.
+          }
+        }
+        return flag;
+      }
+
+      console.log(isPrimeNumber("ali"));
+      console.log(isPrimeNumber("13"));
+    </script>
+  </body>
+</html>

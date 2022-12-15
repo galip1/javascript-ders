@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <style>
+      .not {
+        margin: 2rem;
+        border: 3px solid black;
+        background-color: bisque;
+        width: 40%;
+        padding: 1rem;
+      }
+      .mesaj {
+        font-size: larger;
+        font-weight: bolder;
+        background-color: crimson;
+        text-transform: uppercase;
+        padding: 0.5rem;
+        color: yellow;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="not">
+      <form action="">
+        <div class="mb-3">
+          <label for="vize" class="form-label">Vize</label>
+          <input type="number" class="form-control" id="vize" />
+        </div>
+        <div class="mb-3">
+          <label for="final" class="form-label">Final</label>
+          <input type="number" class="form-control" id="final" />
+        </div>
+        <button type="button" class="btn btn-primary" onclick="hesapla()">
+          Hesapla
+        </button>
+        <button type="reset" class="btn btn-primary" onclick="sil()">
+          Temizle
+        </button>
+      </form>
+      <div id="msg"></div>
+    </div>
+
+    <script>
+      function hesapla() {
+        let vize = document.querySelector("#vize").value;
+        let final = document.querySelector("#final").value;
+        let mesaj = document.querySelector("#msg");
+        const sonuc = vize * 0.4 + final * 0.6;
+        // let not = "";
+        switch (true) {
+          case sonuc < 30:
+            not = "FF";
+            break;
+          case sonuc < 40:
+            not = "DD";
+            break;
+          case sonuc < 50:
+            not = "DC";
+            break;
+          case sonuc < 60:
+            not = "CC";
+            break;
+          case sonuc < 70:
+            not = "CB";
+            break;
+          case sonuc < 80:
+            not = "BB";
+            break;
+          case sonuc < 90:
+            not = "BA";
+            break;
+          case sonuc < 100:
+            not = "AA";
+            break;
+          default:
+            not = "Hatal Not";
+            break;
+        }
+        mesaj.classList.remove("d-none");
+        mesaj.classList.add("mesaj");
+        mesaj.innerText = `Ortalamanız : ${sonuc}, Notunuz : ${not}`;
+      }
+
+      function sil() {
+        document.querySelector("#msg").innerText = "";
+        document.querySelector("#msg").classList.add("d-none");
+      }
+    </script>
+  </body>
+</html>
