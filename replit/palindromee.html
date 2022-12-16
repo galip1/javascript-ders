@@ -12,27 +12,31 @@
 
     <script>
       const numberEl = document.querySelector("#number");
-      const num = Number(numberEl.value);
-      const isPalindrome = function (x) {
+
+      const isPalindrome = function (num) {
         //121
-        if (x < 0) {
+        var num = Number(numberEl.value);
+        if (num < 0) {
           return false;
         }
-        const original = x; //121
-        let pali = 0; //
-        while (x > 0) {
-          pali = (x % 10) + pali * 10; //pali 1   pali 12    pali 121
-          x = Math.floor(x / 10); // x 12  x 1  x 0
 
-          console.log(x);
+        const original = num; //121
+        let pali = 0; //
+        while (num > 0) {
+          pali = (num % 10) + pali * 10; //pali 1   pali 12    pali 121
+          num = Math.floor(num / 10); // num 12  num 1  num 0
+
+          console.log(num);
           console.log(pali);
 
           console.log("****************");
         }
-
+        alert(`The number you entered is ${pali ? "" : "not"} palindrome`);
         return original === pali;
       };
-      console.log(isPalindrome(121));
+
+      // console.log(isPalindrome(121));
+      //  alert(isPalindrome(121));
       /*******************/
     </script>
   </body>
