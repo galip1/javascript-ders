@@ -11,15 +11,20 @@
     <script>
       const courses = ["html", "css", "bootstrap", "js", "react"];
       console.log(courses);
-      const courses1 = ["html", 10, "bootstrap", { x: 4 }, "react"];
+      const courses1 = ["html", 10, "bootstrap", { x: 4 }, , "react"];
       console.log(courses1);
 
       console.log(courses[2]);
       console.log(document.querySelector("h1"));
       console.log(courses[courses.length - 1]); // en son elemanna ulasma
 
-      courses[3] = "merhaba"; //değiştirme
+      courses1[3] = "merhaba"; //değiştirme
       console.log(courses[3]);
+
+      console.log(courses[4]);
+      console.log(courses[courses.length - 2]);
+      courses[2] = "20";
+      courses.splice[(2, 3)];
 
       // courses = ["abc"]; //referans vermeye hata verir
       //buna hata verir cunku const . fakat ustteki let olsyadı degısırdı

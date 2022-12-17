@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="bilgi"></p>
+    <p><b>Arac Detaylari</b></p>
+    <p id="detay"></p>
+    <p id="tutar"></p>
+    <script>
+      const arac = {
+        marka: "Volvo",
+        model: "v40",
+        yil: 2020,
+        renk: "Beyaz",
+        yakit: "Dizel",
+        saatUcreti: 100,
+        ucretHesapla: function (saat) {
+          return saat * this.saatUcreti;
+        },
+      };
+      document.querySelector(
+        "#bilgi"
+      ).innerHTML = `${arac.marka}, ${arac.model},  ${arac.yil}, ${arac.renk}, ${arac.yakit}, ${arac.saatUcreti}`;
+      document.querySelector(
+        "#tutar"
+      ).innerHTML = `Ödenecek tutar : ${arac.ucretHesapla(5)}`;
+      // "Tutar " + `${arac.ucretHesapla(4)}`;
+    </script>
+  </body>
+</html>

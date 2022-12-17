@@ -10,14 +10,20 @@
     <button id="btnFind">Find the greates number</button>
     <h1 id="result"></h1>
     <script>
+      //  method olacak 1 ı evet fonk diğeri max sayı bulma
       document.querySelector("#btnFind").addEventListener("click", () => {
         const arr = [12, 3, 5, 12, 34, 67, 12, 5, 76, 8];
+        //bu dizi bir fonk a gönderilecek
+
         const maxNumber = getMaxNumber(arr);
         document.querySelector("#result").innerHTML = maxNumber;
       });
+      //2.method
+      //dısarıdan bır dızı alacak o diziyi döndurecek.en buyuk sayıyı bulack
       const getMaxNumber = (arr) => {
         if (!arr || typeof arr !== "object" || arr.length <= 0) return false;
-        let maxNum = arr[0];
+        //!arr --null und vs ise// objecten farklıysa//sıfır ise kucukse
+        let maxNum = arr[0]; //referns noktası. bastan sen benım en buyugumsun dedık
         for (let i = 0; i < arr.length; i++) {
           if (arr[i] > maxNum) {
             maxNum = arr[i];

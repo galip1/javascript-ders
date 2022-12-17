@@ -22,16 +22,31 @@
           //start method
           console.log("engıne is powered");
         },
+        end: function () {
+          console.log("new method"); //methodu çagırman gerek
+        },
       };
       console.log(car);
       console.log(car.modal);
       console.log(car.engine.torque);
       console.log(typeof car.engine.torque);
-
+      console.log(typeof car);
       car.engine.torque = 500;
+      console.log(car.engine.torque);
+      car.engine.torque = 200;
       console.log(car.engine.torque);
 
       car.start(); //methodu cagırdık
+      car.end();
+
+      // let strHeart;
+      // const setShotIcons = (shot) => {
+      //   for (let i = 0; i < shot; i++) {
+      //     strHeart += "kalp işareti";
+      //   }
+      //   return strHeart;
+      // };
+      // document.querySelector("#shot").innerHTML = setShotIcons(5);
     </script>
   </body>
 </html>

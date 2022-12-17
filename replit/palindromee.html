@@ -11,33 +11,33 @@
     <button onclick="isPalindrome()">Hesapla</button>
 
     <script>
-      const numberEl = document.querySelector("#number");
+      // const numberEl = document.querySelector("#number");
 
-      const isPalindrome = function (num) {
-        //121
-        var num = Number(numberEl.value);
-        if (num < 0) {
-          return false;
+      // const isPalindrome = function (num) {
+      //   let num = Number(numberEl.value);
+      //   alert(`The number you entered is ${pali ? "" : "not"} palindrome`);
+      //   if (num < 0) {
+      //     return false;
+      //   }
+      //   const original = num; //121
+      //   let pali = 0; //
+      //   while (num > 0) {
+      //     pali = (num % 10) + pali * 10; //pali 1   pali 12    pali 121
+      //     num = Math.floor(num / 10); // num 12  num 1  num 0
+      //   }
+
+      //   return original === pali;
+      // };
+      function isPalindrome(val) {
+        const len = val.length;
+
+        for (let i = 0; i < len / 2; i++) {
+          if (val[i] !== val[len - 1 - i]) {
+            return false;
+          }
         }
-
-        const original = num; //121
-        let pali = 0; //
-        while (num > 0) {
-          pali = (num % 10) + pali * 10; //pali 1   pali 12    pali 121
-          num = Math.floor(num / 10); // num 12  num 1  num 0
-
-          console.log(num);
-          console.log(pali);
-
-          console.log("****************");
-        }
-        alert(`The number you entered is ${pali ? "" : "not"} palindrome`);
-        return original === pali;
-      };
-
-      // console.log(isPalindrome(121));
-      //  alert(isPalindrome(121));
-      /*******************/
+        return true;
+      }
     </script>
   </body>
 </html>

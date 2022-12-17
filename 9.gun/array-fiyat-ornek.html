@@ -14,9 +14,11 @@
         const arr = [1000, 5000, 3000, 6000];
 
         const prices = setPrices(arr, 20);
+        //hem diziyi hemde artıs azalıs mıktarını gönderıyoruz
 
         document.querySelector("#result").innerHTML = prices;
       });
+
       const setPrices = (arr, rate) => {
         if (!arr || typeof arr !== "object" || arr.length <= 0) return false;
 

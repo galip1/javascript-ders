@@ -13,26 +13,24 @@
     <script>
       const numberEl = document.querySelector("#number");
       const num = Number(numberEl.value);
+
       const isPalindrome = function (x) {
-        //121
+        alert(`The number you entered is ${pali ? "" : "not"} palindrome`);
         if (x < 0) {
           return false;
         }
+
         const original = x; //121
         let pali = 0; //
         while (x > 0) {
           pali = (x % 10) + pali * 10; //pali 1   pali 12    pali 121
           x = Math.floor(x / 10); // x 12  x 1  x 0
-
-          console.log(x);
-          console.log(pali);
-
-          console.log("****************");
         }
 
         return original === pali;
       };
-      console.log(isPalindrome(121));
+
+      //console.log(isPalindrome(122));
       /*******************/
     </script>
   </body>
