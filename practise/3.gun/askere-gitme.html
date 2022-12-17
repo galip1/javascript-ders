@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        padding: 1rem;
+        background-color: aqua;
+        width: 55%;
+      }
+      .container input,
+      .container button {
+        padding: 0.5rem;
+        font-size: 1.2rem;
+      }
+      .container label {
+        font-size: 1.3rem;
+        margin-right: 0.6rem;
+      }
+      .container #msg {
+        margin-top: 1rem;
+        width: 400px;
+        padding: 1rem;
+        color: yellow;
+        font-size: 1.3rem;
+      }
+
+      .yesil {
+        background-color: green;
+      }
+      .kirmizi {
+        background-color: red;
+      }
+      .turuncu {
+        background-color: orange;
+      }
+      .invisible {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- cinsiyet ve yasa gore askere gitme durumu -->
+    <div class="container">
+      <input type="number" name="yas" id="yas" />
+
+      <input type="radio" name="cinsiyet" id="erkek" checked />
+      <label for="erkek">Erkek</label>
+
+      <input type="radio" name="cinsiyet" id="kadın" />
+      <label for="kadın">Kadın</label>
+
+      <button type="button" onclick="durum()">Askerlik Durumu</button>
+
+      <button type="reset" onclick="sil()">Temizle</button>
+
+      <div id="msg"></div>
+    </div>
+
+    <script>
+      //Kullanıcının girdiği yaş ve cinsiyet bilgisine göre askere gidip gidemeyeceğini
+      //mesaj olarak bildirin.
+      let rb_erkek = document.querySelector("#erkek");
+      let rb_kadin = document.querySelector("#kadin");
+      let mesaj = document.querySelector("#msg");
+      function durum() {
+        let yas = document.querySelector("#yas").value;
+        mesaj.classList.remove("invisible");
+        if (yas) {
+          if (yas >= 20 && rb_erkek.checked) {
+            mesaj.innerHTML = `<strong>Askere Gidebilirsiniz</strong>`;
+            mesaj.classList.add("yesil");
+          } else {
+            mesaj.innerHTML = `<strong>Askere Gidemezsiniz</strong>`;
+            mesaj.classList.add("kirmizi");
+          }
+        } else {
+          mesaj.innerHTML = `<strong>Yaş Değeri Giriniz</strong>`;
+          mesaj.classList.add("turuncu");
+        }
+      }
+      function sil() {
+        mesaj.innerText = "";
+        mesaj.classList.add("invisible");
+        rb_erkek.checked = true;
+        rb_kadin.checked = false;
+        if (mesaj.classList.contains("yesil")) {
+          mesaj.classList.remove("yesil");
+        } else if (mesaj.classList.contains("kirmizi")) {
+          mesaj.classList.remove("kirmizi");
+        } else if (mesaj.classList.contains("turuncu")) {
+          mesaj.classList.remove("turuncu");
+        }
+      }
+    </script>
+  </body>
+</html>

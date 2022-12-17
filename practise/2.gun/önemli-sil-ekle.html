@@ -59,10 +59,10 @@
     </div>
     <script>
       //Textboxlara girilen ad ve meslek değerlerine göre mesaj yazdırın.
+      let mesaj = document.querySelector("#mesaj");
       function gonder() {
         let isim = document.querySelector("#ad").value;
         let meslek = document.querySelector("#meslek").value;
-        let mesaj = document.querySelector("#mesaj");
 
         mesaj.classList.remove("d-none"); // burası yazılmazsa kutu ıcınde once yazılan ad vs, sonra kabul etmez
         mesaj.classList.add("d-block");

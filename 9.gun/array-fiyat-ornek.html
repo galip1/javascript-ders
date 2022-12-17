@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btnSetPrices">Set Prices</button>
+    <h1 id="result"></h1>
+    <script>
+      document.querySelector("#btnSetPrices").addEventListener("click", () => {
+        const arr = [1000, 5000, 3000, 6000];
+
+        const prices = setPrices(arr, 20);
+        //hem diziyi hemde artıs azalıs mıktarını gönderıyoruz
+
+        document.querySelector("#result").innerHTML = prices;
+      });
+
+      const setPrices = (arr, rate) => {
+        if (!arr || typeof arr !== "object" || arr.length <= 0) return false;
+
+        // rate = rate || !isNaN(rate) || 0;
+        rate = !rate || isNaN(rate) ? 0 : rate; // default bı deger atamak.
+        // // if de uuzn hali
+        // if (!rate || isNaN(rate)) {
+        //   rate = 0;
+        // }
+        console.log(rate);
+
+        for (let i = 0; i < arr.length; i++) {
+          arr[i] += (arr[i] * rate) / 100;
+        }
+        return arr;
+      };
+
+      /*
+      
+      document.querySelector("#btnSetPrices").addEventListener("click", ()=>{
+    const arr =[45000,20000,4500,1000];
+    const prices = setPrices(arr, 50);
+    document.querySelector("#result").innerHTML = prices;
+});
+const setPrices = (arr, rate) => {
+    if(!arr || typeof(arr)!=="object" || arr.length<=0 ) return false;
+  
+    rate = (!rate || isNaN(rate)) ? 0 : rate;
+    /* 
+    if(!rate || isNaN(rate)){
+        rate = 0;
+    } for(let i=0; i<arr.length; i++){
+        arr[i] += arr[i]*rate/100;
+    }
+    return arr;
+}
+    */
+    </script>
+  </body>
+</html>
