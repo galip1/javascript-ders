@@ -16,8 +16,10 @@
   background-color: aquamarine;
   padding: 0.5rem 1.5rem;
 }
-.card .btn-guess {
+.card button.btn-guess {
   background-color: rgb(104, 212, 21);
   color: white;
   display: none;
+  /* baslangıcta guess ın gorunmemesını ıstıyoruz.
+         starta tıklanınca ortaya cıksın. */
 }

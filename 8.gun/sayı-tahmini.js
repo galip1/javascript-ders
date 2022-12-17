@@ -1,34 +1,72 @@
-const randomNumber = 0; ///global
+let randomNumber = 0; //global bir değişken. hem startan hede guess den ulaşılır
+//start tan  setter edilir,,guess dend e getter edilir.
+const btnGuess = document.querySelector(".btn-guess");
+const btnStart = document.querySelector(".btn-start");
+const numEl = document.querySelector("#txtNumber");
+const labelEl = document.querySelector("#lblResult");
+
+const minRandomNumber = 1;
+const maxRAndomNumber = 100;
+const totalShot = 5;
+/*
+const minRandomNumber=1;
+const maxRandomNumber=100;
+const totalShot=5;
+
+burası degısken olur start fonk dkı randomnumber kısmına eklenebilir. değişken adıyle.
+
+
+*/
 
 const start = () => {
-  randomNumber = generateRandomNumber(1, 100); //normalde 0 ile 1 arası sayı tutar.
-  const btnGuess = document.querySelector(".btn-guess");
-  btnGuess.style.display = "inline";
-
-  const btnStart = document.querySelector(".btn-start");
-  btnStart.innerHTML = "reset game";
+  randomNumber = generateRandomNumber(minRandomNumber, maxRAndomNumber); //100 ile 0 arsında bir sayı tutacak
+  btnGuess.style.display = "inline"; // butona basınca guess ın görunmesı gerek.
+  //burada classlist işlemez onun display degiştirilmesi gerek onun için style ile cozulur.
+  //onceden none idi gorunmesı icın inline yazdı. block değil çunku yeri istediğimiz yere gelmedi
+  btnStart.innerHTML = "Reset Game"; //starta bastıgı aman reset game olsun.
+  labelEl.innerHTML = "";
+  numEl.removeAttribute("disabled"); //start game yapılmadan dısabled yapılabilir.
+  //bunun için once html ınputa disabled ekle(attribute).numEll burada bir attribute olan disablede karsılıktır.
+  numEl.focus();
 };
 
 const reset = () => {
-  btnGuess.style.display = "none";
-  btnStart.innerHTML = "start game";
+  ///sayıyı tahmın edince ekrarnın otomatık olarak reetlenmesı ııcn.
+  btnGuess.style.display = "none"; //eski hale geri getirilir.
+  btnStart.innerHTML = "Start the game";
+  numEl.setAttribute("disabled", "true"); //resetten sonrada disbled olsun--ikinci bir deger girmek gerekiyor
 };
-const guess = () => {
-  const numEl = document.querySelector("#txtNumber");
-  const labelEl = document.querySelector("#lblResult");
-  const num = Number(numEl.value);
 
-  num = num || 0;
+const guess = () => {
+  //girilen sayı almamız gerekiyor==numEl
+  let num = Number(numEl.value);
+  num = num || 0; //eger bos gelirse burası false olur. içi bos gelmesi
+  //default deger ataması yapıldı.uzunuda asagıda if kısmı
+  /*
+    if(!num){
+        num = 0;
+    } eger num degeri null, empty, und ,0 sa, içibos strıng ise vs 
+    gelen ifade bunlardan ise num=0 olsun.true olursa if de devam eder.
+    yanı kısacası num un false olması durumunda 0 sıfır olsun
+    */
 
   if (num === randomNumber) {
-    labelEl.innerHTML = "congrats! you  guess the number";
+    //tutulan sayı---num ise randomnumber ı tahmın ettıgımız sayı.
+    labelEl.innerHTML = "Congrats! You guessed the number"; ///burda duruma göre label mesaj vericez
+    reset();
   } else if (num > randomNumber) {
-    labelEl.innerHTML = "your number is greater then the random number";
+    labelEl.innerHTML = "Your number is greater than the random number";
   } else {
-    labelEl.innerHTML = "your number is lessear then the random number";
+    labelEl.innerHTML = "Your number is lesser than the random number";
   }
+  numEl.value = ""; //her girişten sonra bos kalsın
+  numEl.focus(); // her girişten sonra da focus lansın
 };
 
-const generateRandomNumber = (min, max) => {
+const generateRandomNumber = (
+  min,
+  max //generateRandomNumber dan start a 1-100 arası sayı gitti.
+  //sdece rastgele sayı uretmek ıcın olusturulan bır fonk.
+) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };

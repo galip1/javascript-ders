@@ -13,17 +13,18 @@
     <link rel="stylesheet" href="sayi-tahmini.css" />
   </head>
   <body>
+    <!-- girilen sayının  -ki startta tutulan- dogru tutulu tutulmadıgını guess te kontrol edıcez.
+    guess fonksıyoununda.
+  -->
     <div class="card">
-      <input type="number" name="" id="txtNumber" />
+      <input type="number" id="txtNumber" disabled />
       <span>
         <button onclick="guess()" class="btn-guess">Guess</button>
-        <button onclick="start()" class="btn-start">
-          Start the game
-        </button> </span
-      ><br />
-      <label for="" id="lblResult"></label>
+        <button onclick="start()" class="btn-start">Start the game</button>
+      </span>
+      <br />
+      <label id="lblResult"></label>
     </div>
-
     <script src="sayı-tahmini.js"></script>
   </body>
 </html>

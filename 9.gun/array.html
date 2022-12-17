@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="a b c"></h1>
+    <script>
+      const courses = ["html", "css", "bootstrap", "js", "react"];
+      console.log(courses);
+      const courses1 = ["html", 10, "bootstrap", { x: 4 }, "react"];
+      console.log(courses1);
+
+      console.log(courses[2]);
+      console.log(document.querySelector("h1"));
+      console.log(courses[courses.length - 1]); // en son elemanna ulasma
+
+      courses[3] = "merhaba"; //değiştirme
+      console.log(courses[3]);
+
+      // courses = ["abc"]; //referans vermeye hata verir
+      //buna hata verir cunku const . fakat ustteki let olsyadı degısırdı
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btnHello" onclick="sayHello1()">Say hello</button>
+
+    <script>
+      /// js 1-2-3 yanı onclıck yontemleri farklı dıger addeve.. ise farklı algılar
+      /// onclıck ler tek işlem yaparken dıgerlerı bırcok ıslem.
+      //ayrıca onclkte sonra gelen bır oncekını ezer. 4-5 de ezmez onalrıda ekler.
+
+      //1 .yontem
+
+      const sayHello1 = () => {
+        console.log("say hello 1");
+      };
+
+      ///2.yontem
+      const sayHello2 = () => {
+        console.log("say Hello 2");
+      };
+      document.querySelector("#btnHello").onclick = sayHello2;
+
+      ///3.yontem
+
+      document.querySelector("#btnHello").onclick = () => {
+        console.log("say Hello 3");
+      };
+
+      //4.yontem
+      const sayHello4 = () => {
+        console.log("say hello 4");
+      };
+      document.querySelector("#btnHello").addEventListener("click", sayHello4);
+
+      ///5.yontem
+
+      document.querySelector("#btnHello").addEventListener("click", () => {
+        console.log("say hello 5");
+      });
+    </script>
+  </body>
+</html>
