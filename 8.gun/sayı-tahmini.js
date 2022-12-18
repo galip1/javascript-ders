@@ -1,4 +1,4 @@
-let randomNumber = 0; //global bir değişken. hem startan hede guess den ulaşılır
+let randomNumber = 0; //global bir değişken. hem startan hemde guess den ulaşılır
 //start tan  setter edilir,,guess dend e getter edilir.
 const btnGuess = document.querySelector(".btn-guess");
 const btnStart = document.querySelector(".btn-start");
@@ -21,13 +21,14 @@ burası degısken olur start fonk dkı randomnumber kısmına eklenebilir. deği
 const start = () => {
   randomNumber = generateRandomNumber(minRandomNumber, maxRAndomNumber); //100 ile 0 arsında bir sayı tutacak
   btnGuess.style.display = "inline"; // butona basınca guess ın görunmesı gerek.
-  //burada classlist işlemez onun display degiştirilmesi gerek onun için style ile cozulur.
+  //burada classlist işlemez onun için display degiştirilmesi gerek onun için style ile cozulur.
   //onceden none idi gorunmesı icın inline yazdı. block değil çunku yeri istediğimiz yere gelmedi
-  btnStart.innerHTML = "Reset Game"; //starta bastıgı aman reset game olsun.
+  btnStart.innerHTML = "Reset Game"; //starta bastıgı zaman reset game olsun.
   labelEl.innerHTML = "";
   numEl.removeAttribute("disabled"); //start game yapılmadan dısabled yapılabilir.
   //bunun için once html ınputa disabled ekle(attribute).numEll burada bir attribute olan disablede karsılıktır.
   numEl.focus();
+  //document.querySelector("#kalp").innerHTML = setShotIcons(5);
 };
 
 const reset = () => {
@@ -38,7 +39,7 @@ const reset = () => {
 };
 
 const guess = () => {
-  //girilen sayı almamız gerekiyor==numEl
+  //girilen sayıyı almamız gerekiyor==numEl
   let num = Number(numEl.value);
   num = num || 0; //eger bos gelirse burası false olur. içi bos gelmesi
   //default deger ataması yapıldı.uzunuda asagıda if kısmı
@@ -66,7 +67,16 @@ const guess = () => {
 const generateRandomNumber = (
   min,
   max //generateRandomNumber dan start a 1-100 arası sayı gitti.
-  //sdece rastgele sayı uretmek ıcın olusturulan bır fonk.
+  //sadece rastgele sayı uretmek ıcın olusturulan bır fonk.
 ) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
+
+let strHeart;
+const setShotIcons = (totalShot) => {
+  for (let i = 0; i < totalShot; i++) {
+    strHeart += "❤️";
+  }
+  return strHeart;
+};
+document.querySelector("#kalp").innerHTML = setShotIcons(5);
