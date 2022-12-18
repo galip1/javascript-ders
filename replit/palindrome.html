@@ -8,14 +8,14 @@
   </head>
   <body>
     <input type="number" name="" id="number" />
-    <button onclick="isPalindrome()">Hesapla</button>
+    <button id="btnPalindrome">Hesapla</button>
 
     <script>
       const numberEl = document.querySelector("#number");
       const num = Number(numberEl.value);
 
       const isPalindrome = function (x) {
-        alert(`The number you entered is ${pali ? "" : "not"} palindrome`);
+        // alert(`The number you entered is ${pali ? "" : "not"} palindrome`);
         if (x < 0) {
           return false;
         }
@@ -30,7 +30,7 @@
         return original === pali;
       };
 
-      //console.log(isPalindrome(122));
+      console.log(isPalindrome(121));
       /*******************/
     </script>
   </body>
