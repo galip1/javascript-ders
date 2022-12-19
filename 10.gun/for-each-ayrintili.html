@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <select name="" id="ddlAnimals"></select>
+    <script>
+      const animals = ["fil", "kuş", "deve", "fare", "kedi"];
+      //dısarıdan bır elemen alıyor ve onu içerde donduruyor
+
+      const dongu = (animal, index) => {
+        console.log(index, animal);
+      };
+
+      //yukarıdakı donguyu foreach ın ıcıne koy
+      animals.forEach(dongu);
+      //foreach bır fonk ve yine fonk olan dongu yu parametre olarak alır
+      //bu duruma callback denır. ayrıca ındex te alır.
+      //her bir elemanı sırayla gezer ve 1. elemandan ıtıbaren donguye atar
+
+      /***********/
+      console.log("/*****************/");
+      /// yukarıdakı durumda ıkı ayrı fonksıyon yerıne tek fonk ile
+      //yani altta bulunan forech ıcıne yazılır.dongunun yerıne koyulur
+
+      animals.forEach((animal, index) => {
+        console.log(index, animal);
+      });
+      console.log("/*****************/");
+      let options = "";
+      animals.forEach((animal, index) => {
+        options += `  <option value="">${index} ${animal}</option>`;
+      });
+
+      document.querySelector("#ddlAnimals").innerHTML = options;
+    </script>
+  </body>
+</html>

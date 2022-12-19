@@ -7,17 +7,16 @@
     <title>Document</title>
   </head>
   <body>
+    <h1 id="hh"></h1>
     <script>
-      const arr = [5, 8, 6, 7, 9, 3, 4, 7, 8, 12, 98];
+      const dizi = [5, 9, 8, 7, 4, -5, -2];
+      const yeniDizi = [];
 
-      const newArr = arr.map((item, index) => {
-        return { name: "ali", count: item };
+      dizi.forEach((item, index) => {
+        yeniDizi[index] = item * 5;
       });
-      console.log(newArr);
-
-      const names = ["mustafa", "ali"];
-      const bigNames = names.map((item) => item.toUpperCase());
-      console.log(bigNames);
+      document.querySelector("#hh").innerHTML = yeniDizi;
+      console.log(yeniDizi);
     </script>
   </body>
 </html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        background-color: aqua;
+        padding: 2rem;
+      }
+      .container-add {
+        margin: 0.5rem 0;
+      }
+
+      .container-add input {
+        margin-right: -5px;
+      }
+
+      button,
+      input {
+        padding: 5px;
+      }
+
+      .container #sehirler {
+        padding: 5px;
+        margin: 20px 50px;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <div class="container-add">
+        <input type="text" name="add" placeholder="write city" id="txtLetter" />
+        <button id="btnAdd" type="button">Add</button>
+      </div>
+      <div class="container-btns">
+        <button id="btnSort" type="button">Sort</button>
+        <button id="btnReverse" type="button">Reverse</button>
+        <button id="btnRemoveLast" type="button">Remove Last</button>
+        <button id="btnRemoveFirst" type="button">Remove First</button>
+        <button id="btnRemoveAll" type="button">Remove All</button>
+        <button id="btnMix" type="button">Mix</button>
+      </div>
+      <div class="container-cities">
+        <ul id="sehirler"></ul>
+      </div>
+    </section>
+    <script>
+      const cities = [
+        "İstanbul",
+        "Ankara",
+        "İzmir",
+        "Antalya",
+        "Samsun",
+        "Malatya",
+      ];
+
+      const letter = document.querySelector("#txtLetter");
+      const btnAdd = document.querySelector("#btnAdd");
+      const city = document.querySelector("#sehirler");
+      const btnSort = document.querySelector("#btnSort");
+
+      btnAdd.addEventListener("click", () => {
+        add();
+      });
+      btnSort.addEventListener("click", () => {
+        sortt();
+      });
+      document.querySelector("#btnReverse").addEventListener("click", () => {
+        rev();
+      });
+      document.querySelector("#btnRemoveLast").addEventListener("click", () => {
+        rem();
+      });
+
+      document.querySelector("#btnRemoveAll").addEventListener("click", () => {
+        removeAll();
+      });
+      document
+        .querySelector("#btnRemoveFirst")
+        .addEventListener("click", () => {
+          first();
+        });
+
+      document.querySelector("#btnMix").addEventListener("click", () => {
+        btnMix();
+      });
+
+      const allCities = () => {
+        let sehir = "";
+        for (let city of cities) {
+          sehir += ` <li>${city}</li>`;
+        }
+        city.innerHTML = sehir;
+      };
+      allCities();
+
+      const add = () => {
+        if (letter.value === ``) {
+          alert("lütfen listeye ekleme yapınız");
+        } else {
+          cities.push(letter.value);
+          city.innerHTML += `<li>${letter.value}</li>`;
+        }
+      };
+
+      const sortt = () => {
+        cities.sort();
+        city.innerHTML = `<li>${cities}</li>`;
+      };
+      const rev = () => {
+        cities.reverse();
+        city.innerHTML = `<li>${cities}</li>`;
+      };
+      const rem = () => {
+        cities.pop();
+        city.innerHTML = `<li>${cities}</li>`;
+      };
+
+      const first = () => {
+        cities.shift();
+        city.innerHTML = `<li>${cities}</li>`;
+      };
+
+      const removeAll = () => {
+        cities.splice(0);
+        city.innerHTML = `<li>${cities}</li>`;
+      };
+
+      const btnMix = () => {
+        const shuffledArray = cities.sort((a, b) => 0.5 - Math.random());
+        city.innerHTML = `<li>${cities}</li>`;
+      };
+    </script>
+  </body>
+</html>
