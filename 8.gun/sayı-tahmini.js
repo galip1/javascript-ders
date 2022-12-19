@@ -54,12 +54,14 @@ const guess = () => {
   if (num === randomNumber) {
     //tutulan sayı---num ise randomnumber ı tahmın ettıgımız sayı.
     labelEl.innerHTML = "Congrats! You guessed the number"; ///burda duruma göre label mesaj vericez
+
     reset();
   } else if (num > randomNumber) {
     labelEl.innerHTML = "Your number is greater than the random number";
   } else {
     labelEl.innerHTML = "Your number is lesser than the random number";
   }
+
   numEl.value = ""; //her girişten sonra bos kalsın
   numEl.focus(); // her girişten sonra da focus lansın
 };
