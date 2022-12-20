@@ -7,6 +7,32 @@
     <title>Document</title>
   </head>
   <body>
-    <script></script>
+    <input type="number" id="txtRate" />
+    <button id="btn">Update</button>
+    <ul id="productList">
+      <li>Notebook <span>1200</span>$</li>
+      <li>Display <span>400</span>$</li>
+      <li>Keyboard <span>50</span>$</li>
+      <li>Mouse <span>15</span>$</li>
+    </ul>
+    <script>
+      const rateEl = document.querySelector("#txtRate");
+      const productListEl = document.querySelectorAll("#productList li");
+      const sp = document.querySelectorAll(span);
+
+      document.querySelector("#btn").addEventListener("click", () => {
+        calculatePrices();
+      });
+
+      const calculatePrices = () => {
+        const rate = Number(rateEl.value);
+        for (let i = 0; i < productListEl.length; i++) {
+          const elPrice = productListEl[i];
+          let price = Number(elPrice.innerText);
+          price = price + (price * rate) / 100;
+          elPrice.innerText = price;
+        }
+      };
+    </script>
   </body>
 </html>

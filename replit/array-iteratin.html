@@ -66,32 +66,7 @@
       const btnAdd = document.querySelector("#btnAdd");
       const city = document.querySelector("#sehirler");
       const btnSort = document.querySelector("#btnSort");
-
-      btnAdd.addEventListener("click", () => {
-        add();
-      });
-      btnSort.addEventListener("click", () => {
-        sortt();
-      });
-      document.querySelector("#btnReverse").addEventListener("click", () => {
-        rev();
-      });
-      document.querySelector("#btnRemoveLast").addEventListener("click", () => {
-        rem();
-      });
-
-      document.querySelector("#btnRemoveAll").addEventListener("click", () => {
-        removeAll();
-      });
-      document
-        .querySelector("#btnRemoveFirst")
-        .addEventListener("click", () => {
-          first();
-        });
-
-      document.querySelector("#btnMix").addEventListener("click", () => {
-        btnMix();
-      });
+      const btnRev = document.querySelector("#btnReverse");
 
       const allCities = () => {
         let sehir = "";
@@ -100,7 +75,12 @@
         }
         city.innerHTML = sehir;
       };
+
       allCities();
+
+      btnAdd.addEventListener("click", () => {
+        add();
+      });
 
       const add = () => {
         if (letter.value === ``) {
@@ -111,29 +91,51 @@
         }
       };
 
+      btnSort.addEventListener("click", () => {
+        sortt();
+      });
       const sortt = () => {
         cities.sort();
         city.innerHTML = `<li>${cities}</li>`;
       };
+
+      btnRev.addEventListener("click", () => {
+        rev();
+      });
       const rev = () => {
         cities.reverse();
         city.innerHTML = `<li>${cities}</li>`;
       };
+
+      document.querySelector("#btnRemoveLast").addEventListener("click", () => {
+        rem();
+      });
       const rem = () => {
         cities.pop();
         city.innerHTML = `<li>${cities}</li>`;
       };
 
-      const first = () => {
-        cities.shift();
-        city.innerHTML = `<li>${cities}</li>`;
-      };
-
+      document.querySelector("#btnRemoveAll").addEventListener("click", () => {
+        removeAll();
+      });
       const removeAll = () => {
         cities.splice(0);
         city.innerHTML = `<li>${cities}</li>`;
       };
 
+      document
+        .querySelector("#btnRemoveFirst")
+        .addEventListener("click", () => {
+          first();
+        });
+      const first = () => {
+        cities.shift();
+        city.innerHTML = `<li>${cities}</li>`;
+      };
+
+      document.querySelector("#btnMix").addEventListener("click", () => {
+        btnMix();
+      });
       const btnMix = () => {
         const shuffledArray = cities.sort((a, b) => 0.5 - Math.random());
         city.innerHTML = `<li>${cities}</li>`;

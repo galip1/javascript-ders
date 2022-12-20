@@ -19,8 +19,8 @@
     </style>
   </head>
   <body>
-    <!-- //Büyük sayının küçük sayıya bölümünden kalanlar toplamını, küçük sayı büyük sayıya
-//yetişene kadar birer birer artırarak bulalım. -->
+    <!-- /Girilen iki sayı arasındaki 4'e bölünüp 8'e bölünmeyen sayıların toplamını ve adedini mesaj
+//olarak yazdırın. -->
     <div class="container">
       <input type="number" name="sayi1" id="sayi1" />
       <input type="number" name="sayi2" id="sayi2" />
@@ -36,18 +36,23 @@
         let sayi1 = Number(sayi1El.value); ///number koymaskta calısır
         let sayi2 = Number(sayi2El.value);
 
+        toplam = 0;
+        sayac = 0;
+
         if (sayi1 > sayi2) {
           let temp = sayi1;
           sayi1 = sayi2;
           sayi2 = temp;
         }
 
-        let kalanlar = 0;
-        while (sayi2 > sayi1) {
-          kalanlar += sayi2 % sayi1;
-          sayi1++;
+        for (let i = sayi1; i <= sayi2; i++) {
+          if (i % 4 == 0 && i % 8 != 0) {
+            toplam += i;
+            sayac++;
+          }
         }
-        mesaj.innerHTML = `Kalanlar toplamı: ${kalanlar}`;
+
+        mesaj.innerHTML = `Sayıların adedi: ${sayac}. Toplamı: ${toplam}`;
         sayi1El.value = "";
         sayi2El.value = "";
       });
