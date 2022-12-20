@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <!-- //Kullanıcıya ürün ve fiyat bilgisi girdirelim, 1500 TL ile bu üründen kaç adet
+// alabileceğini ekrana yazdıralım.(Do While kullanarak yapalım) -->
+    <input type="text" name="urun" id="urun" />
+    <input type="number" name="fiyat" id="fiyat" />
+    <button id="hesapla">Hesapla</button>
+    <div id="mesaj"></div>
+    <script>
+      let ürünLi = document.querySelector("#urun");
+      let fiyatLi = document.querySelector("#fiyat");
+      let mesaj = document.querySelector("#mesaj");
+
+      document.querySelector("#hesapla").addEventListener("click", () => {
+        let ürün = ürünLi.value;
+        let fiyat = fiyatLi.value;
+
+        let sayac = 0;
+        let toplam = 0;
+
+        do {
+          toplam = sayac * fiyat;
+          if (toplam > 1500) {
+            toplam -= fiyat;
+            sayac--;
+            break;
+          }
+          sayac++;
+        } while (toplam <= 1500);
+
+        mesaj.innerHTML = `${toplam}, ${sayac}`;
+      });
+    </script>
+  </body>
+</html>
