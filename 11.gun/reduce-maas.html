@@ -1,1 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <h1 id="sonuc"></h1>
+  <body>
+    <script>
+      const maas = [300, 5000, 6000, 7000, 2000];
+      const zam = maas
+        .filter((maas) => maas < 3000)
 
+        .map((maas) => maas * 1.1)
+        .reduce((toplam, maas) => toplam + maas);
+
+      document.querySelector("#sonuc").innerHTML = zam;
+      console.log(toplam, maas);
+    </script>
+  </body>
+</html>

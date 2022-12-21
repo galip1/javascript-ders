@@ -67,6 +67,10 @@
       const city = document.querySelector("#sehirler");
       const btnSort = document.querySelector("#btnSort");
       const btnRev = document.querySelector("#btnReverse");
+      const btnRemLast = document.querySelector("#btnRemoveLast");
+      const btnRemAll = document.querySelector("#btnRemoveAll");
+      const btnRemFirst = document.querySelector("#btnRemoveFirst");
+      const btnmix = document.querySelector("#btnMix");
 
       const allCities = () => {
         let sehir = "";
@@ -84,7 +88,7 @@
 
       const add = () => {
         if (letter.value === ``) {
-          alert("lütfen listeye ekleme yapınız");
+          alert("lütfen bir şehir yazınız");
         } else {
           cities.push(letter.value);
           city.innerHTML += `<li>${letter.value}</li>`;
@@ -107,7 +111,7 @@
         city.innerHTML = `<li>${cities}</li>`;
       };
 
-      document.querySelector("#btnRemoveLast").addEventListener("click", () => {
+      btnRemLast.addEventListener("click", () => {
         rem();
       });
       const rem = () => {
@@ -115,7 +119,7 @@
         city.innerHTML = `<li>${cities}</li>`;
       };
 
-      document.querySelector("#btnRemoveAll").addEventListener("click", () => {
+      btnRemAll.addEventListener("click", () => {
         removeAll();
       });
       const removeAll = () => {
@@ -123,17 +127,15 @@
         city.innerHTML = `<li>${cities}</li>`;
       };
 
-      document
-        .querySelector("#btnRemoveFirst")
-        .addEventListener("click", () => {
-          first();
-        });
+      btnRemFirst.addEventListener("click", () => {
+        first();
+      });
       const first = () => {
         cities.shift();
         city.innerHTML = `<li>${cities}</li>`;
       };
 
-      document.querySelector("#btnMix").addEventListener("click", () => {
+      btnmix.addEventListener("click", () => {
         btnMix();
       });
       const btnMix = () => {

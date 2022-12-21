@@ -5,33 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      img {
+        color: yellow;
+      }
+    </style>
   </head>
   <body>
-    <input type="number" id="txtRate" />
-    <button id="btn">Update</button>
-    <ul id="productList">
-      <li>Notebook <span>1200</span>$</li>
-      <li>Display <span>400</span>$</li>
-      <li>Keyboard <span>50</span>$</li>
-      <li>Mouse <span>15</span>$</li>
-    </ul>
+    <img
+      id="myImage"
+      src="/assets/img/lamba_off.gif"
+      width="100"
+      height="180"
+    />
+
+    <p>
+      <button
+        type="button"
+        onclick="light(1)"
+        onmouseover="mouseOver()"
+        onmouseout="mouseOut()"
+      >
+        Light On
+      </button>
+      <button type="button" onclick="light(0)">Light Off</button>
+    </p>
+
     <script>
-      const rateEl = document.querySelector("#txtRate");
-      const productListEl = document.querySelectorAll("#productList li");
-      const sp = document.querySelectorAll(span);
-
-      document.querySelector("#btn").addEventListener("click", () => {
-        calculatePrices();
-      });
-
-      const calculatePrices = () => {
-        const rate = Number(rateEl.value);
-        for (let i = 0; i < productListEl.length; i++) {
-          const elPrice = productListEl[i];
-          let price = Number(elPrice.innerText);
-          price = price + (price * rate) / 100;
-          elPrice.innerText = price;
+      const light = (sw) => {
+        var pic;
+        if (sw == 0) {
+          pic = "/assets/img/lamba_off.gif";
+        } else {
+          pic = "/assets/img/lamba_on.gif";
         }
+        document.getElementById("myImage").src = pic;
       };
     </script>
   </body>
