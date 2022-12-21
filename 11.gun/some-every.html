@@ -7,16 +7,26 @@
     <title>Document</title>
   </head>
   <body>
+    <h1 id="someVery"></h1>
     <script>
       const prices = [-50, 500, 1500, 20, 10, 15];
       // Tüm elemanlar şartı sağlıyorsa TRUE döner
       if (prices.every((n) => n > 0)) {
         alert("Tüm sayılar pozitif");
       }
+
+      const evry = prices.every((n) => n > 0);
+      document.querySelector("#someVery").innerHTML = prices;
+      console.log(evry);
+
       // En az bir tane şartı sağlayan eleman varsa TRUE döner
       if (prices.some((n) => n > 0)) {
         alert("Bazı sayılar pozitif");
       }
+
+      const som = prices.every((n) => n > 0);
+      document.querySelector("#someVery").innerHTML = prices;
+      console.log(som);
     </script>
   </body>
 </html>

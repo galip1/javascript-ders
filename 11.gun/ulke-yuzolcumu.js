@@ -40,10 +40,11 @@ const loadData = () => {
   //countriesten country her donusunde ulkeleri bırakacak ve
   //en sonunda herbir ulke ile alakalı bır options olacak
   document.querySelector("#ddlCountries").innerHTML = options;
+  document.querySelector("#totalArea span").innerHTML = getTotalArea();
 };
 
 const getTotalArea = () => {
-  return countries.reduce((t, country) => t + country.area, 0);
+  return countries.reduce((t, country) => t + country.area, 0); //0 dan baslasın
 };
 
 const getCountry = (ccn3) => {

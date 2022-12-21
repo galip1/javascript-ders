@@ -29,7 +29,8 @@ document.querySelector("#ddlCountries").addEventListener("change", (e) => {
 
 const loadData = () => {
   let options = `<option value="" selected disabled>select a country</option>`;
-  //select in içine options oluşturmak için
+  //select in içine options oluşturmak için..selected=secili olması
+  // disabled= select a country bı daha secılmesın anlamında
   // console.log(countries.lenght);
   for (let country of countries) {
     // console.log(country);
