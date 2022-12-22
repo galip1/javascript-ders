@@ -44,7 +44,12 @@
           const aboutEl = (e.target
             .closest("main")
             .querySelector(".about").style.backgroundColor = "red");
-          aboutEl.innerHTML = e.target.innerHTML;
+          aboutEl.innerHTML = e.target.innerHTML; // metni de tıklanan metin oldu
+
+          // if (e.target.id === "x") {
+          //   e.target.closest("main").querySelector("p").style.backgroundColor =
+          //     "yellow";
+          // }
         });
       });
     </script>

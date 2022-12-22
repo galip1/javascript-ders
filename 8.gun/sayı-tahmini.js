@@ -5,9 +5,15 @@ const btnStart = document.querySelector(".btn-start");
 const numEl = document.querySelector("#txtNumber");
 const labelEl = document.querySelector("#lblResult");
 
+const kalp = document.querySelector("#kalp");
+const right = document.querySelector("#shot");
+
 const minRandomNumber = 1;
 const maxRAndomNumber = 100;
-const totalShot = 5;
+right.value = 5;
+
+right.innerHTML = right.value;
+
 /*
 const minRandomNumber=1;
 const maxRandomNumber=100;
@@ -28,7 +34,11 @@ const start = () => {
   numEl.removeAttribute("disabled"); //start game yapılmadan dısabled yapılabilir.
   //bunun için once html ınputa disabled ekle(attribute).numEll burada bir attribute olan disablede karsılıktır.
   numEl.focus();
-  //document.querySelector("#kalp").innerHTML = setShotIcons(5);
+
+  right.style.display = "inline";
+  kalp.style.display = "inline";
+  right.value = 5;
+  right.innerHTML = right.value;
 };
 
 const reset = () => {
@@ -58,8 +68,12 @@ const guess = () => {
     reset();
   } else if (num > randomNumber) {
     labelEl.innerHTML = "Your number is greater than the random number";
+    right.innerHTML = right.value -= 1;
+    gameOver();
   } else {
     labelEl.innerHTML = "Your number is lesser than the random number";
+    right.innerHTML = right.value -= 1;
+    gameOver();
   }
 
   numEl.value = ""; //her girişten sonra bos kalsın
@@ -73,12 +87,9 @@ const generateRandomNumber = (
 ) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
-
-let strHeart;
-const setShotIcons = (totalShot) => {
-  for (let i = 0; i < totalShot; i++) {
-    strHeart += "❤️";
+const gameOver = () => {
+  if (right.value == 0) {
+    labelEl.innerHTML = "Game Over";
+    reset();
   }
-  return strHeart;
 };
-document.querySelector("#kalp").innerHTML = setShotIcons(5);

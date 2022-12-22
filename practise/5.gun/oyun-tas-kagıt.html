@@ -44,18 +44,22 @@
       let kullaniciSecimi;
       let sanalSecim;
       let sonuc;
+
+      //butonların içinde ayrı ayrı gezerek click ozelliği verilebilir
       butonlar.forEach((buton) => {
         buton.addEventListener("click", (e) => {
-          kullaniciSecimi = e.target.id;
+          kullaniciSecimi = e.target.id; //tıklanann yerdekı bilgiyi yakalamak ıcın.
+
           kullaniciSecimiEl.innerHTML = kullaniciSecimi;
           generateSanalSecim(); //rastgele bir seçim üretecek fonksiyon olmalı
           /*   //TODO: 
         setTimeout ile sonucu bekleterek getirelim */
-          getSonuc(); //rastgele seçim ile kullanıcı seçimini karşılaştıracak fonks.
+          getSonuc();
+          //rastgele seçim ile kullanıcı seçimini karşılaştıracak fonks.
         });
       });
       function generateSanalSecim() {
-        const randomNumber = Math.floor(Math.random() * 3) + 1;
+        const randomNumber = Math.floor(Math.random() * 3) + 1; ///0 gelme ihtimaline karsı
         if (randomNumber == 1) {
           sanalSecim = "tas";
         }

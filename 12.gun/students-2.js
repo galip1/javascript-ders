@@ -11,6 +11,8 @@ const loadData = () => {
         <td><button class="btn-delete btn btn-danger">🗑️</button></td>
       </tr>`;
   });
+  ///student point e bı class atayıp
+  //asagıyada clss yazılır---tr td.score--
   tblStudentsTbody.innerHTML = strHtml;
 };
 loadData();
@@ -27,9 +29,16 @@ document.getElementById("btnShowLowScores").addEventListener("click", () => {
     }
   });
 });
+
+//.btn-delete quseAll sayesınde butun butonları getirir ama diiz seklınde.
+//herbiirne ulaşmak için forEach kulanılır ve her birine clik ozelliği kazandırılır
 document.querySelectorAll(".btn-delete").forEach((button) => {
   button.addEventListener("click", (e) => {
+    //sil e tıklandıgnda name lere ulasmamız lazım.
+    // closest tr ye ulas sonra td. ismede innertext ten ulasılır
     const name = e.target.closest("tr").querySelector("td").innerText;
+
+    //result a gore bir işlem yaparız
     const result = confirm(`Are you sure to delete ${name}?`);
     if (result) {
       //silme işlemi

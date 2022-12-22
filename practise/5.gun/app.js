@@ -6,31 +6,40 @@ const lowerEl = document.querySelector("#lower");
 const sayiEl = document.querySelector("#sayi");
 const sembolEl = document.querySelector("#sembol");
 const uretEl = document.querySelector("#uret");
+
 /* büyük-küçük harf, sayı ve sembolleri bir değere atayalım */
 const buyukHarf = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const kucukHarf = "abcdefghijklmnopqrstuvwxyz";
 const sayi = "0123456789";
 const sembol = "!@#$%^&*()_+=";
+
 /* random olarak küçük harf getiren fonksiyon */
 const getLowercase = () => {
   return kucukHarf[Math.floor(Math.random() * kucukHarf.length)];
 };
+
 /* random olarak büyük harf getiren fonksiyon */
 const getUppercase = () => {
   return buyukHarf[Math.floor(Math.random() * buyukHarf.length)];
 };
+
 /* random olarak sayi getiren fonksiyon */
 const getNumber = () => {
   return sayi[Math.floor(Math.random() * sayi.length)];
 };
+
 /* random olarak sembol getiren fonksiyon */
 const getSembol = () => {
   return sembol[Math.floor(Math.random() * sembol.length)];
 };
+
 /* kullanıcının seçimlerine göre sifre üreten temel fonksiyon */
 const sifreUret = () => {
+  //input içndeki value degerını almamız grekır
   const inputUz = sifreUzEl.value;
-  let password = "";
+
+  //hepsinin ayrı ayrı ckecked durumu.biribirine baglı degıl
+  let password = ""; //bir değişken atadık
   if (upperEl.checked) {
     password += getUppercase();
   }
@@ -43,10 +52,12 @@ const sifreUret = () => {
   if (sembolEl.checked) {
     password += getSembol();
   }
+
+  //burada bır donguye ıhtıyac var
   for (let i = password.length; i < inputUz; i++) {
     password += tamamla();
   }
-  ekranEl.innerText = password;
+  ekranEl.innerText = password; //ekrana yazdırmak ıcın
 };
 /*kullanıcının seçimleriyle belirlediği şifre uzunluğu
  arasındaki boşluğu
@@ -65,8 +76,8 @@ const tamamla = () => {
   if (sembolEl.checked) {
     tamamlamaArr.push(getSembol());
   }
-  if (tamamlamaArr.length == 0) return "";
+  if (tamamlamaArr.length == 0) return ""; //hiçbirsey secılı olmayadabilir hata vermemesi için if calıssın
   return tamamlamaArr[Math.floor(Math.random() * tamamlamaArr.length)];
 };
 /* buton tıklandığında sifreUret fonksiyon gelsin */
-uretEl.addEventListener("click", sifreUret);
+uretEl.addEventListener("click", sifreUret); //clik oldugunda sıfreuret calıssın
