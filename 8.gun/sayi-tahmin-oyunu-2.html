@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Tasarım Kodlama</title>
+    <style>
+      body {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Butonla Sayı Tahmin Oyunu</h1>
+    <input type="button" id="baslat" value="Oyunu Başlat" />
+    <input type="button" id="tahmin" value="Tahmin Et" disabled /><br />
+    <input type="text" id="sayi" placeholder="Bir sayı girin (0-100)" />
+    <script>
+      var rsayi,
+        sayac,
+        hak = 3;
+      var baslat = document.querySelector("#baslat");
+      var tahmin = document.querySelector("#tahmin");
+      var sayi = document.querySelector("#sayi");
+
+      baslat.onclick = function () {
+        tahmin.disabled = false;
+        rsayi = Math.round(Math.random() * 100);
+        sayac = 0;
+      };
+      tahmin.onclick = function () {
+        sayac++;
+        if (rsayi != sayi.value && sayac >= hak) {
+          window.alert("Üzgünüm hakkınız bitti");
+          tahmin.disabled = true;
+        }
+
+        if (rsayi == sayi.value) {
+          window.alert("tebrikler kazandınız.");
+        } else if (sayi.value > rsayi) {
+          window.alert("Daha küçük sayı girin");
+        } else {
+          window.alert("Daha büyük sayı girin");
+        }
+      };
+    </script>
+  </body>
+</html>

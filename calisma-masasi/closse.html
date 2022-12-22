@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header><h1 id="hello">Hello Javascript</h1></header>
+    <main>
+      <p class="about">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident
+        repellendus officiis ut voluptatem quibusdam animi, explicabo officia
+        temporibus? Consequuntur, architecto eum maiores enim necessitatibus
+        obcaecati quasi incidunt autem tenetur sequi?
+      </p>
+      <ul class="list">
+        <li><a href="https://google.com">Lorem.</a></li>
+        <li><a href="#">Non.</a></li>
+        <li><a href="#">Provident!</a></li>
+        <li><a href="#">Consectetur.</a></li>
+        <li><a href="#">Eaque?</a></li>
+      </ul>
+    </main>
+    <script>
+      const list = document.querySelector(".list");
+
+      console.log(list);
+      console.log(list.childNodes);
+      console.log(list.classList);
+      console.log(list.className);
+      console.log(list.children);
+      console.log(list.lastElementChild);
+      console.log(list.parentElement);
+      console.log(list.firstChild);
+
+      document.querySelector("a").addEventListener("click", (e) => {
+        e.preventDefault();
+        const aboutEl = (e.target
+          .closest("main")
+          .querySelector(".about").style.backgroundColor = "red");
+      });
+    </script>
+  </body>
+</html>
