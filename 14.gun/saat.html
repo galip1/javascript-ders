@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @font-face {
+        font-family: "digital";
+        src: url("../assets/fonts/digital-7.ttf"); /* ttf=true type font */
+      }
+      .clock {
+        font-family: "digital";
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        background-color: rgb(105, 220, 39);
+        font-size: 3rem;
+        border-radius: 0.5rem;
+        justify-content: center;
+      }
+      .hidden {
+        /* display: none;  kaydırıyor saati*/
+        opacity: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="assets/css/81-setinterval-practise.css" />
+      </head>
+      <body>
+        <ul id="clock" class="clock">
+          <li>23</li>
+          <li>:</li>
+          <li>10</li>
+        </ul>
+        <script>
+          const hourEl = document.querySelector("#clock li:nth-child(1)");
+          const minuteEl = document.querySelector("#clock li:nth-child(3)");
+          const secondEl = document.querySelector("#clock li:nth-child(2)");
+
+          setInterval(() => {
+            const dateTime = new Date();
+            const hour = dateTime.getHours();
+            const minute = dateTime.getMinutes();
+
+            hourEl.innerHTML = hour;
+            minuteEl.innerHTML = minute;
+            secondEl.classList.toggle("hidden");
+          }, 1000);
+        </script>
+      </body>
+    </html>
+  </body>
+</html>

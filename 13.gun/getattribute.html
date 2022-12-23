@@ -13,11 +13,11 @@
     <script>
       const btn = document.getElementById("btnCheck");
       document.querySelector("#txtTc").addEventListener("input", (e) => {
-        const tckn = e.target.value;
+        const tckn = e.target.value; //inputun degerıne ulasır
         if (tckn && !isNaN(tckn) && tckn.length === 11) {
           btn.removeAttribute("disabled");
         } else {
-          btn.setAttribute("disabled", "");
+          btn.setAttribute("disabled", ""); //true da yazılablir --"true"
         }
       });
     </script>

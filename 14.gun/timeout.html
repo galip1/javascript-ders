@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      nav.menu {
+        background-color: rgb(252, 218, 118);
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -50px;
+        transition: top 0.5s;
+      }
+      nav.menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        height: 50px;
+      }
+      nav.menu ul a {
+        text-decoration: none;
+        color: black;
+      }
+      nav.menu #switch {
+        background-color: rgb(53, 198, 1);
+        text-align: center;
+        padding: 0.3rem;
+        cursor: pointer;
+      }
+      main {
+        padding-top: 1rem;
+      }
+
+      nav.menu.opened {
+        top: 0;
+      }
+
+      /* opened calısmadı onune ozel nav.menu koyduk ve ezdık */
+    </style>
+  </head>
+
+  <body>
+    <nav id="menu" class="menu">
+      <ul>
+        <li><a href="#">Lorem.</a></li>
+        <li><a href="#">Earum?</a></li>
+        <li><a href="#">Sint?</a></li>
+        <li><a href="#">Magnam?</a></li>
+        <li><a href="#">Inventore?</a></li>
+      </ul>
+      <div id="switch" class="switch">
+        <i class="fa-solid fa-arrow-down"></i>
+      </div>
+    </nav>
+    <main>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+        quaerat officia praesentium quam blanditiis molestias deleniti dolore
+        eligendi, natus dignissimos! Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Deserunt, nisi iure laudantium ut eius nemo itaque
+        nulla, impedit necessitatibus saepe quos similique modi neque odio ullam
+        et consequatur voluptatem vitae consequuntur blanditiis recusandae
+        animi, enim delectus. Laboriosam eius nemo nam?
+      </p>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+        quaerat officia praesentium quam blanditiis molestias deleniti dolore
+        eligendi, natus dignissimos! Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Deserunt, nisi iure laudantium ut eius nemo itaque
+        nulla, impedit necessitatibus saepe quos similique modi neque odio ullam
+        et consequatur voluptatem vitae consequuntur blanditiis recusandae
+        animi, enim delectus. Laboriosam eius nemo nam?
+      </p>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+        quaerat officia praesentium quam blanditiis molestias deleniti dolore
+        eligendi, natus dignissimos! Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Deserunt, nisi iure laudantium ut eius nemo itaque
+        nulla, impedit necessitatibus saepe quos similique modi neque odio ullam
+        et consequatur voluptatem vitae consequuntur blanditiis recusandae
+        animi, enim delectus. Laboriosam eius nemo nam?
+      </p>
+    </main>
+
+    <script>
+      // const sayHello = () => {
+      //   alert("hello");
+      // };
+
+      // //  setTimeout(sayHello, 5000);
+
+      // setTimeout(() => {
+      //   alert("hello");
+      // }, 5000);
+
+      let menuTimeout = null;
+      document.querySelector("#menu").addEventListener("mouseenter", (e) => {
+        menuTimeout = setTimeout(() => {
+          e.target.classList.add("opened");
+        }, 300);
+      });
+      //  console.log("mouseenter");
+      document.querySelector("#menu").addEventListener("mouseleave", (e) => {
+        e.target.classList.remove("opened");
+
+        if (menuTimeout !== null) {
+          clearTimeout(menuTimeout); //menutimeout temızle yanı ıptal et..
+          //if ise her ihtimale karsı kullandık
+        }
+      });
+      // console.log("mouseleave");
+    </script>
+  </body>
+</html>

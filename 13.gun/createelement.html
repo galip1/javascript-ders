@@ -29,7 +29,7 @@
       const btnDel = document.getElementById("btnDel");
 
       document.getElementById("btnAdd").addEventListener("click", () => {
-        const newLi = document.createElement("li");
+        const newLi = document.createElement("li"); //element adı ekler--mesela li--b-
         newLi.innerHTML = txtNameEl.value;
         newLi.classList.add("bg-primary");
         newLi.setAttribute("id", `li-${txtNameEl.value}`);
