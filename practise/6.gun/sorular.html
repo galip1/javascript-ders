@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <p id="show"></p>
+    <script>
+      // 1- Bir dizideki pozitif ve çift sayıların toplamını ve adedini bulun.
+      const dizi = [-5, 6, 3, -5, -7, 4, 12, -58, 72];
+
+      let adet = 0;
+      let toplam = 0;
+
+      /*    for(let i = 0;i<dizi.length;i++){
+               let sart = dizi[i]>0 && dizi[i]%2==0;
+               if(sart){
+                   toplam+=dizi[i];
+                   adet++;
+               }
+           } */
+      let sart;
+      for (let item of dizi) {
+        sart = item > 0 && item % 2 == 0;
+        if (sart) {
+          toplam += item;
+          adet++;
+        }
+      }
+
+      console.log(`${adet} adet sayının toplamı = ${toplam}`);
+
+      // 2- Ülke ve başkentlerin yazılı olduğu dizilerinde eşleşen indis elemanlarını birleştirerek ayrı bir diziye atın.
+      const ulkeler = [
+        "Türkiye",
+        "Almanya",
+        "Fransa",
+        "Hollanda",
+        "İtalya",
+        "İspanya",
+        "Portekiz",
+      ];
+      const baskentler = [
+        "Ankara",
+        "Berlin",
+        "Paris",
+        "Amsterdam",
+        "Roma",
+        "Madrid",
+        "Lizbon",
+      ];
+
+      const birlesikDizi = [];
+
+      for (let i in ulkeler) {
+        birlesikDizi[i] = ulkeler[i] + "-" + baskentler[i];
+      }
+      console.log(birlesikDizi);
+
+      document.getElementById("show").innerHTML = birlesikDizi;
+
+      //3- Dizinin herbir elemanını ilk 3 karakterini büyük harfli olarak değiştirip alfabetik hale getirip yazdırın.
+      let ulkeler1 = [
+        "Türkiye",
+        "Almanya",
+        "Fransa",
+        "Hollanda",
+        "İtalya",
+        "İspanya",
+        "Portekiz",
+      ];
+
+      let yeniDizi = [];
+      ulkeler1 = ulkeler1.sort((a, b) => a.localeCompare(b)); ///sort tersı reverse
+      console.log(ulkeler1);
+
+      for (let item of ulkeler1) {
+        ////0 dan basla ama 3 u alma.
+        item = item.substring(0, 3).toLocaleUpperCase(); //ilk 3 harfı ııcn
+        yeniDizi.push(item); //ekleme
+      }
+      console.log(yeniDizi);
+
+      document.getElementById("show").innerHTML = yeniDizi;
+
+      // 4- Dizideki herbir elemanın 2 katının mutlak değerini alıp başka bir diziye atın.
+      // Yeni dinin elemanları azalan şekilde sıralansın.
+      let dizi1 = [-5, 6, 3, -5, -7, 4, 12, -58, 72];
+
+      let newArr = [];
+      dizi1.forEach((item, index) => {
+        newArr[index] = Math.abs(item * 2); //absolute sayıyı pozıtıf yapar
+      });
+      console.log(newArr.sort((a, b) => b - a)); //sıralama yapar
+      document.getElementById("show").innerHTML = newArr;
+
+      // 5- Dizideki elemanlardan uzunluğu belirtilen sayıya eşit olanaları ayrı bir dizide saklayan uygulamayı yapın.
+      const isimler = [
+        "Ali",
+        "Can",
+        "Kemal",
+        "Ahmet",
+        "Oya",
+        "Selim",
+        "Mine",
+        "Elif",
+        "Bora",
+      ];
+
+      let newName = [];
+      const filtrele = (uzunluk) => {
+        newArr = isimler.filter((isim) => isim.length == uzunluk);
+        return newArr;
+      };
+
+      console.log(filtrele(3)); // sayı belirle
+      document.getElementById("show").innerHTML = newArr;
+
+      // 6- Dizideki sayıların ortalamasını bulun ortalamadan yüksek olanları başka bir diziye atarak yazdırın.
+      const notlar1 = [38, 62, 74, 28, 86, 67, 92, 100, 56, 94, 72];
+
+      let toplm = notlar1.reduce((x, y) => x + y, 0); //baslangıc degerı 0.
+
+      let ort = Math.round(toplm / notlar1.length); //tofixed calsımadı.bı bak---   math.round( toplm / notlar1.length)
+
+      const ortUst = () => {
+        const ortUs = notlar1.filter((t) => t > ort);
+        return ortUs;
+      };
+
+      console.log(ortUst());
+      console.log(ort);
+      document.getElementById("show").innerHTML = ortUst();
+
+      //7- Dizideki notların ortalamasını bulun, ortalamadan yuksek olanların ortalamasını %20,
+      // düşük olanların ortalamasını %10 artırarak yeni diziye atalım.
+
+      const notlar = [
+        { ad: "Ali Can", not: 38 },
+        { ad: "Veli Kan", not: 62 },
+        { ad: "Oya Tan", not: 74 },
+        { ad: "Elif Han", not: 28 },
+        { ad: "Mine San", not: 86 },
+        { ad: "Mert Er", not: 67 },
+        { ad: "Bora Fer", not: 92 },
+        { ad: "Ayşe Yılmaz", not: 100 },
+        { ad: "İlke Cansız", not: 56 },
+        { ad: "Sude Canlı", not: 94 },
+        { ad: "Bade Sert", not: 72 },
+      ];
+
+      const newNotlar = notlar.forEach((n, index) => {
+        n[i] += notlar[i];
+        console.log(index, n);
+      });
+
+      // let toplamSonuc = notlar[1].reduce((x, y) => x + y, 0);
+      // let ortSonuc = Math.round(toplamSonuc / notlar[1].length);
+
+      // const ortalama = () => {
+      //   const ort = notlar[1].filter((t) => t > ortSonuc);
+      //   return ort;
+      // };
+      // console.log(toplamSonuc());
+      // console.log(ortSonuc);
+      // document.getElementById("show").innerHTML = toplamSonuc();
+    </script>
+  </body>
+</html>

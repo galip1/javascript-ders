@@ -16,6 +16,8 @@
   <body>
     <div class="container mt-5">
       <form action="https://google.com" method="post" id="frmLogin">
+        <!-- get bilgileri acık gonderir-post ise gizli
+        ayrıca inputlara name yazılmalı -->
         <div class="mb-3">
           <label for="txtEmail" class="form-label">Email address</label>
           <input
@@ -40,20 +42,26 @@
     </div>
     <script>
       document.querySelector("#frmLogin").addEventListener("submit", (e) => {
-        e.preventDefault(); // submit butonunun formu submit etmesin iengelledik
+        e.preventDefault(); // submıt butonu formun bır parcası oldugu ıcın formda bır degısıklık olur-post edilir.
+        //submit butonunun formu submit etmesini engelledik
+        //cunku yukarıda bulunan google lınkıne gıdıyor.
+        //link olmasada login tıklandıgında sayfa tekrar yenılenır
         const emailEl = document.getElementById("txtEmail");
-        const passwordEl = document.getElementById("txtPassword");
+        const passwordE = document.getElementById("txtPassword");
         try {
+          //burada kontrollu hata olusturulur-asagıda belirtilen sartları saglamıyorsa- alert
           if (!isEmail(emailEl.value)) throw "Please enter a valid email";
           if (!passwordEl.value) throw "Please enter your password";
-          e.target.submit();
+          e.target.submit(); //olayın backende gitmesi
         } catch (error) {
-          alert(error);
+          alert(error); //daha kontrllu uyarılar yapılır kullanıcıya--buarya error handlng denır
         }
       });
       const isEmail = (email) => {
+        //email olup olmama kontrolu
         const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-        return emailRegex.test(email);
+        return emailRegex.test(email); ///bu regexi test et
+        //gecerse yukarı  if kısmına gider
       };
     </script>
   </body>
