@@ -163,6 +163,7 @@ const listem = [
          molestiae dignissimos voluptas possimus sint animi ipsum enim eveniet, corporis quia.`,
   },
 ];
+
 const containerEl = document.querySelector(".container");
 const butonEl = document.querySelector(".btn-container");
 window.addEventListener("DOMContentLoaded", () => {
@@ -180,10 +181,12 @@ const itemYerlestir = (bilgiler) => {
  </article>
 `;
   });
-  icerik = icerik.join("");
+  icerik = icerik.join(""); //resimleri vs daha duzgun hale getirdi
   console.log(icerik);
   containerEl.innerHTML = icerik;
 };
+
+//ne kadar kategorı varsa ona gore button olustur
 const butonFiltrele = () => {
   const categories = listem.reduce(
     (values, item) => {
