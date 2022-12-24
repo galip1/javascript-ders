@@ -12,60 +12,88 @@
     />
     <style>
       body {
-        background-image: url(/assets/img/pexels-designecologist-1389460.jpg);
+        background-image: url(/assets/img//tatli2.jpg);
         background-repeat: no-repeat;
         background-size: cover;
       }
       h1 {
         text-align: center;
       }
-      .countdown {
-        display: flex;
-        justify-content: space-between;
-        max-width: 400px;
-        margin: 50px auto;
+      @font-face {
+        font-family: "digital";
+        src: url("../assets/fonts/digital-7.ttf"); /* ttf=true type font */
       }
+      .clock {
+        font-family: "digital";
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
 
-      .countdown div {
-        font-size: 50px;
+        font-size: 3rem;
+        border-radius: 0.5rem;
+        justify-content: center;
+        gap: 10rem;
+      }
+      .clock li {
+        font-size: 100px;
       }
     </style>
   </head>
   <body>
     <h1>YILBAŞI GECESİ GERİ SAYIM</h1>
     <hr />
-    <div class="countdown">
-      <div id="day">gun</div>
-      <div id="hour">saat</div>
-      <div id="minute">dakıka</div>
-      <div id="second">saniye</div>
-    </div>
+    <ul id="clock" class="clock">
+      <li id="day">00</li>
+      <li id="hour">00</li>
+      <li id="minute">00</li>
+      <li id="second">00</li>
+    </ul>
 
     <script>
-      // const countDate = new Date(`Jan 1,2023 00:00:00`).getTime;
+      //2.eleman
 
-      // function newYear() {
-      //   const now = new Date().getTime();
-      //   let gap = countDate - now;
+      const countDate = new Date(`Jan 1,2023 00:00:00`).getTime;
 
-      //   let second = 1000;
-      //   let minute = second * 60;
-      //   let hour = minute * 60;
-      //   let day = hour * 24;
+      const hourEl = document.querySelector("#clock li:nth-child(2)");
+      const minuteEl = document.querySelector("#clock li:nth-child(3)");
+      const secondEl = document.querySelector("#clock li:nth-child(4)"); //2.eleman
+      const dayEl = document.querySelector("#clock li:nth-child(1)");
 
-      //   let d = Math.floor(gap / day);
-      //   let h = Math.floor(gap % day) / hour;
-      //   let m = Math.floor(gap % hour) / minute;
-      //   let s = Math.floor(gap % minute) / second;
+      function newYear() {
+        const now = new Date().getTime();
+        let gap = countDate - now;
 
-      //   document.getElementById("day").innerText = d;
-      //   document.getElementById("hour").innerText = h;
-      //   document.getElementById("minute").innerText = m;
-      //   document.getElementById("second").innerText = s;
-      // }
+        let second = 1000;
+        let minute = second * 60;
+        let hour = minute * 60;
+        let day = hour * 24;
 
-      // setInterval(function () {
-      //   newYear();
+        let d = Math.floor(gap / day);
+        let h = Math.floor(gap % day) / hour;
+        let m = Math.floor(gap % hour) / minute;
+        let s = Math.floor(gap % minute) / second;
+
+        document.getElementById("day").innerText = d;
+        document.getElementById("hour").innerText = h;
+        document.getElementById("minute").innerText = m;
+        document.getElementById("second").innerText = s;
+      }
+
+      setInterval(() => {
+        newYear();
+      }, 1000);
+      // setInterval(() => {
+      //   const dateTime = new Date(); ///suandakı tarıh ve saatı cekmek ıcın
+      //   const hour = dateTime.getHours();
+      //   const minute = dateTime.getMinutes();
+      //   const day = dateTime.getDay();
+      //   const second = dateTime.getSeconds();
+
+      //   hourEl.innerHTML = hour;
+      //   minuteEl.innerHTML = minute;
+      //   dayEl.innerHTML = day;
+      //   secondEl.innerHTML = second;
       // }, 1000);
     </script>
   </body>

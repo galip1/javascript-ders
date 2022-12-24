@@ -153,21 +153,22 @@
         { ad: "Bade Sert", not: 72 },
       ];
 
-      const newNotlar = notlar.forEach((n, index) => {
-        n[i] += notlar[i];
-        console.log(index, n);
+      let toplamm = notlar.reduce((x, y) => x + y.not, 0); // x in ilk degeri 0,
+
+      toplamm = (toplamm / notlar.length).toFixed(2);
+
+      console.log(toplamm);
+
+      const newNotlar = notlar.map((item) => {
+        if (item.not >= toplamm) {
+          item.not = (item.not * 1.2).toFixed(1);
+        } else {
+          item.not = (item.not * 1.1).toFixed(1);
+        }
+        return item;
       });
 
-      // let toplamSonuc = notlar[1].reduce((x, y) => x + y, 0);
-      // let ortSonuc = Math.round(toplamSonuc / notlar[1].length);
-
-      // const ortalama = () => {
-      //   const ort = notlar[1].filter((t) => t > ortSonuc);
-      //   return ort;
-      // };
-      // console.log(toplamSonuc());
-      // console.log(ortSonuc);
-      // document.getElementById("show").innerHTML = toplamSonuc();
+      console.log(newNotlar);
     </script>
   </body>
 </html>

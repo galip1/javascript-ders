@@ -20,7 +20,9 @@
         left: 0;
         right: 0;
         top: -50px;
+        /* top ve height arayı kapatmalı */
         transition: top 0.5s;
+        /* top ı takip et */
       }
       nav.menu ul {
         list-style-type: none;
@@ -30,6 +32,7 @@
         justify-content: center;
         align-items: center;
         gap: 1rem;
+        /* top ve height arayı kapatmalı */
         height: 50px;
       }
       nav.menu ul a {
@@ -50,7 +53,7 @@
         top: 0;
       }
 
-      /* opened calısmadı onune ozel nav.menu koyduk ve ezdık */
+      /* opened calısmadı onune daha ozel nav.menu koyduk ve ezdık */
     </style>
   </head>
 
@@ -108,22 +111,34 @@
       //   alert("hello");
       // }, 5000);
 
-      let menuTimeout = null;
+      let menuTimeout = null; //basa koymalıyız kı asagıdakı ıkı durum bunu kullanabilsin.
+      //üzerine geldğinde acıl
+
       document.querySelector("#menu").addEventListener("mouseenter", (e) => {
         menuTimeout = setTimeout(() => {
           e.target.classList.add("opened");
         }, 300);
       });
       //  console.log("mouseenter");
+
+      //fare ayrılırken kapan
       document.querySelector("#menu").addEventListener("mouseleave", (e) => {
         e.target.classList.remove("opened");
 
         if (menuTimeout !== null) {
           clearTimeout(menuTimeout); //menutimeout temızle yanı ıptal et..
           //if ise her ihtimale karsı kullandık
+          //menutimeout dolu ıse bunu calıstır
         }
       });
       // console.log("mouseleave");
+
+      // toogle ile cozumu
+
+      const menu = document.getElementById("menu");
+      document.getElementById("switch").addEventListener("click", () => {
+        menu.classList.toggle("opened");
+      });
     </script>
   </body>
 </html>

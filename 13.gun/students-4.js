@@ -34,7 +34,9 @@ document.querySelectorAll(".btn-delete").forEach((button) => {
     const name = trEl.querySelector("td").innerText;
     const result = confirm(`Are you sure to delete ${name}?`);
     if (result) {
-      trEl.remove();
+      setTimeout(() => {
+        trEl.remove();
+      }, 1000);
     }
   });
 });

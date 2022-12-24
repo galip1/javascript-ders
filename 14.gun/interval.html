@@ -15,7 +15,7 @@
       const list = document.querySelector("#list");
       let listInterval = null;
       document.querySelector("#btnStart").addEventListener("click", () => {
-        if (listInterval !== null) return;
+        if (listInterval !== null) return; ///
         listInterval = setInterval(() => {
           const li = document.createElement("li");
           li.innerText = Math.floor(Math.random() * 100);
@@ -24,7 +24,7 @@
       });
       document.querySelector("#btnStop").addEventListener("click", () => {
         clearInterval(listInterval);
-        listInterval = null;
+        listInterval = null; ///stop abasınca null olur
         console.log(listInterval);
       });
     </script>
