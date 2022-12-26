@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      fetch("https://api.tvmaze.com/search/shows?q=mountain")
+        //baglantı sonucunu görmek ıcın bır cevap gelmesı gerek
+        .then((resp) => {
+          console.log(resp);
+          return resp.json();
+        })
+        .then((data) => console.log(data)); ////bu then ler bır promıse yapısıdır.birden fazla kullanılabılır
+      //data istediğimiz kısım
+      /// console.log(data[0].show.name); bu sekilde ıstedıgımız verıyı alabliriz
+    </script>
+  </body>
+</html>

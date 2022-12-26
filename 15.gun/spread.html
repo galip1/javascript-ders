@@ -19,12 +19,13 @@
     />
   </head>
   <body>
+    <h1 id="show"></h1>
     <script>
       const sum = (n1, n2, n3, n4, n5) => {
         const total = n1 + n2 + n3 + n4 + n5;
         console.log(total);
+        document.getElementById("show").innerHTML = total;
       };
-
       const arr = [5, 6, 9, 15, 45, 8]; //8 sayısı fazla acıkta kalır yukarda n6 dıye eklemek lazım
       console.log(arr);
       console.log(...arr);

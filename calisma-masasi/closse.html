@@ -38,31 +38,44 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
-        <link rel="stylesheet" href="assets/css/81-setinterval-practise.css" />
       </head>
       <body>
-        <ul id="clock" class="clock">
-          <li>00</li>
-          <li>:</li>
-          <li>00</li>
-        </ul>
+        <h1 id="gg"></h1>
         <script>
-          const hourEl = document.querySelector("#clock li:nth-child(1)");
-          const minuteEl = document.querySelector("#clock li:nth-child(3)");
-          const secondEl = document.querySelector("#clock li:nth-child(2)"); //2.eleman
+          let val;
 
-          setInterval(() => {
-            const dateTime = new Date(); ///suandakı tarıh ve saatı cekmek ıcın
-            const hour = dateTime.getHours();
-            const minute = dateTime.getMinutes();
+          function number(a, b, c, cb) {
+            let arr = [];
 
-            hourEl.innerHTML = hour;
-            minuteEl.innerHTML = minute;
-            /* sanıye yı ac kapa--toogle ile --opacity*/
-            secondEl.classList.toggle("hidden");
-          }, 1000);
+            if (cb && typeof cb === `function`) {
+              for (let i = 0; i < 3; i++) {
+                arr[i] = cb(arguments[i] * 2);
+              }
+            }
+            return arr;
+          }
 
-          //her sanıyede bdegısır
+          function add(a) {
+            return a + 1;
+          }
+          function plus(a) {
+            return a + 5;
+          }
+
+          // val = number(5, 6, 10, plus); //fonk gönderilezmse calısmaz mesela sayı cb ye karsılık fonk gelmesı gerek
+          //yada plus yerıne bır fonk da tanımlanabilir
+
+          val = number(5, 6, 10, function (a) {
+            return a + 10;
+          });
+
+          //  val = add(10);
+
+          // for (let i = 0; i < val.length; i++) {
+          //   val[i] = add(val[i]);
+          // }
+
+          console.log(val);
         </script>
       </body>
     </html>

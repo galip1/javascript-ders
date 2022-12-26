@@ -10,7 +10,7 @@
   <body>
     <script>
       const sayHello = ({ firstName, lastName }) => {
-        console.log(`Hello ${firstName} ${lastName}`);
+        console.log(`Hello ${(firstName = "mehmet")} ${(lastName = "can")}`);
       };
       const person = {
         firstName: "Ali",
