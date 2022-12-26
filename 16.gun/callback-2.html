@@ -13,13 +13,16 @@
         setTimeout(() => {
           const total = a + b;
           cb(total);
-        }, 3000);
+        }, 500);
       };
+
       console.log("Toplama işlemi başlıyor...");
       sum(100, 50, (result) => {
         console.log(`Toplama bitti. Sonuç: ${result}`);
       });
+
       console.log("Toplama işlemi devam ediyor");
+      /**/
     </script>
   </body>
 </html>

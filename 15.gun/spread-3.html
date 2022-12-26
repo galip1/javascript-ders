@@ -28,6 +28,10 @@
       };
       console.log(person);
 
+      //person dan yenıbır dizi olusturduk--p1
+      ///referans type
+      //o nedenle aynı object
+
       const p1 = person;
 
       console.log(person.firstName);
@@ -45,7 +49,10 @@
       console.log(person.salary);
       console.log(p1.salary);
       /**********************************************/
+
+      //spread ile kopyasını alır.
       const p2 = { ...person }; //shallow copy
+
       console.log(person.firstName);
       console.log(p2.firstName);
 
@@ -53,6 +60,10 @@
 
       console.log(person.firstName);
       console.log(p2.firstName);
+
+      p2.firstName = "ahmet";
+      console.log(p2.firstName);
+      console.log(person.firstName);
     </script>
   </body>
 </html>

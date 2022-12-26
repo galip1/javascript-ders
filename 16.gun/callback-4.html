@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="show1"></h1>
+    <h2 id="show2"></h2>
+    <h3 id="show3"></h3>
+    <script>
+      const show1 = document.querySelector("#show1");
+      const show2 = document.querySelector("#show2");
+      const show3 = document.querySelector("#show3");
+
+      const number = (a, b, cb) => {
+        setTimeout(() => {
+          const total = a + b;
+          cb(total); ///burada return olmaz
+          //cb 150 oldu
+          ///sonucu cb aracılıgı ıle gonderılr
+        }, 10);
+      };
+
+      show1.innerHTML = `toplama işlemi baslıyor`;
+      number(100, 50, function (result) {
+        ///burd result u nasıl ıstersem oyle kullanırım
+
+        show3.innerHTML = `toplama işlemi bitti. Sonuc ${result}`;
+      }); //100=a,50=b, fonk ise cb ye esittir
+
+      show2.innerHTML = `toplama işlemi devam ediyor`;
+    </script>
+  </body>
+</html>
