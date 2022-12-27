@@ -84,18 +84,24 @@
 
     <script>
       const basliklar = document.querySelector(".basliklar");
-      console.log(basliklar);
 
-      const urunlerResim = document.querySelectorAll(".image");
+      const urunlerResim = document.querySelectorAll(".image"); //resımlerın hepsi
 
       basliklar.addEventListener("click", (e) => {
         if (e.target.classList.contains("urun")) {
           basliklar.querySelector(".active").classList.remove("active");
           e.target.classList.add("active");
-          const aranan = e.target.getAttribute("data-sec");
+          ///baslıkladan class ı actıve olan elementın activi kaldır
+          //hangısıne tıkladıysam e.target o dur.ustte.ve hangısıne tıklanırsa actıve olacak
 
+          //sımdı baslıklardan resımlerı secmek gerek.
+          //ayakkabya tıklanınca ayakkabıya aıt resımlr gelsın.
+          const aranan = e.target.getAttribute("data-sec");
+          //aranan----aranan datasec e gore shoe-bag vs olacak
           urunlerResim.forEach((item) => {
+            //urunlerresım bır dızı
             if (aranan == "all" || item.classList.contains(aranan))
+              ///
               item.style.display = "block";
             else item.style.display = "none";
           });

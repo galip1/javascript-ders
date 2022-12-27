@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Person {
+        constructor(firstName, lastName, dob) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+          this.dob = new Date(dob);
+        }
+        getBirthYear = () => this.dob.getFullYear;
+
+        getFullName = () => `${this.firstName} ${this.lastName} `;
+
+        getBirthYear = () => this.dob.getFullYear;
+      }
+      const persn1 = new Person(`Jhon`, `Doe`, `04-03-1980`);
+      const persn2 = new Person(`Ali`, `CAN`, `12-09-1988`);
+
+      console.log(persn1);
+      console.log(persn2.dob.getFullYear());
+      console.log(persn2.getFullName());
+    </script>
+  </body>
+</html>
