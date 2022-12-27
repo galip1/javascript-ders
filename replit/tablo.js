@@ -1,6 +1,10 @@
 import { students } from "../assets/data/students.js";
 
+const letterInput = document.getElementById("textInput");
+const btnAdd = document.getElementById("btnAdd");
+const point = document.getElementById("btnPoint");
 const tblStudentsTbody = document.querySelector("#tblStudents tbody");
+
 const loadData = () => {
   let strHtml = "";
   students.forEach((student, index) => {
@@ -18,7 +22,7 @@ const loadData = () => {
   });
   tblStudentsTbody.innerHTML = strHtml;
 };
-loadData();
+
 /* EVENTS */
 document.getElementById("btnShowLowScores").addEventListener("click", () => {
   const lastTDs = tblStudentsTbody.querySelectorAll("tr td.score");
@@ -37,7 +41,9 @@ document.querySelectorAll(".btn-delete").forEach((button) => {
     e.stopPropagation(); // olayın parent lara aktarılmasını engeller.
     const trEl = e.target.closest("tr");
     const name = trEl.querySelector("td").innerText;
+
     const result = confirm(`Are you sure to delete ${name}?`);
+
     if (result) {
       setTimeout(() => {
         trEl.remove();
@@ -51,26 +57,15 @@ tblStudentsTbody.querySelectorAll("tr").forEach((tr) => {
   });
 });
 
-/******** */
-// const btnAdd = document.querySelector("#btnAdd");
-// const letter = document.querySelector("#textInput");
-
-// btnAdd.addEventListener("click", () => {
-//   add();
-// });
-
-// const add = () => {
-//   if (letter.value === ``) {
-//     alert("Öğrenci adı yazınız");
-//   } else {
-//     students.push(letter.value);
-//     tblStudentsTbody.innerHTML += `<td>${letter.value}</td>`;
-//   }
-// };
 document.getElementById("btnAdd").addEventListener("click", () => {
-  const newLi = document.createElement("td");
-  newLi.innerHTML = letter.value;
-  tblStudentsTbody.appendChild(newLi);
-});
+  let index = document.getElementById("index");
+  let name = document.getElementById("name");
+  let point = document.getElementById("point");
 
+  if (name) {
+    let id = students.length + 1;
+    students.push({ name: name });
+  }
+});
+loadData();
 /* EVENTS */

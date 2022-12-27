@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const todos = [
+        {
+          id: 1,
+          text: `Take out trash`,
+          isCompleted: true,
+        },
+        {
+          id: 2,
+          text: `Meeting with boss`,
+          isCompleted: true,
+        },
+        {
+          id: 3,
+          text: `Dentist appt`,
+          isCompleted: false,
+        },
+      ];
+
+      // for (let i = 0; i < todos.length; i++) {
+      //   //console.log(i);
+      //   console.log(todos[i].id);
+      // }
+
+      // for (let todo of todos) {
+      //   console.log(todo.text);
+      // }
+
+      const all = todos.forEach((todo) => {
+        // console.log(todo.text);
+        return todo.id;
+      });
+      console.log(all);
+
+      const yap = todos.map((todo) => {
+        //console.log(todo.text);
+        return todo.isCompleted;
+      });
+      console.log(yap);
+
+      const filtre = todos
+        // .forEach((todo) => todo.id)
+        .filter((todo) => todo.isCompleted === true)
+        .map((todo) => todo.text);
+
+      console.log(filtre);
+    </script>
+  </body>
+</html>

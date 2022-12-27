@@ -39,21 +39,21 @@
             <input
               class="form-control"
               id="textInput"
-              type="search"
+              type="text"
               placeholder="Type name..."
               aria-label="Search"
             />
             <button
               id="btnPoint"
               class="btn btn-outline-dark btn-light mx-2"
-              type="submit"
+              type="button"
             >
               Point
             </button>
             <button
               id="btnAdd"
               class="btn btn-outline-light btn-warning mx-1 px-5"
-              type="submit"
+              type="button"
             >
               +Add
             </button>
@@ -64,10 +64,10 @@
           <table id="tblStudents" class="table">
             <thead class="table-dark">
               <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Score</th>
-                <th scope="col"></th>
+                <th scope="col" id="index">#</th>
+                <th scope="col" id="name">Name</th>
+                <th scope="col" id="point">Score</th>
+                <th scope="col" id="del"></th>
               </tr>
             </thead>
             <tbody id="tbody"></tbody>
