@@ -32,59 +32,62 @@
     </style>
   </head>
   <body>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <form class="d-flex my-1" role="search">
-            <input
-              class="form-control"
-              id="textInput"
-              type="text"
-              placeholder="Type name..."
-              aria-label="Search"
-            />
-            <button
-              id="btnPoint"
-              class="btn btn-outline-dark btn-light mx-2"
-              type="button"
-            >
-              Point
-            </button>
-            <button
-              id="btnAdd"
-              class="btn btn-outline-light btn-warning mx-1 px-5"
-              type="button"
-            >
-              +Add
-            </button>
-          </form>
+    <div class="container">
+      <div class="row mt-2 w-80">
+        <div class="col-md-3 mb-3">
+          <input
+            class="form-control"
+            id="textInput"
+            type="text"
+            placeholder="Type name..."
+          />
         </div>
+        <div class="col-md-3 mb-3">
+          <button
+            id="btnPoint"
+            class="btn point btn-outline-dark btn-light px-4"
+            type="button"
+          >
+            Point
+          </button>
 
-        <div class="col-12">
-          <table id="tblStudents" class="table">
-            <thead class="table-dark">
-              <tr>
-                <th scope="col" id="index">#</th>
-                <th scope="col" id="name">Name</th>
-                <th scope="col" id="point">Score</th>
-                <th scope="col" id="del"></th>
-              </tr>
-            </thead>
-            <tbody id="tbody"></tbody>
-            <tfoot>
-              <tr>
-                <td colspan="2">Average</td>
-                <td colspan="2"></td>
-              </tr>
-            </tfoot>
-          </table>
+          <button
+            id="btnAdd"
+            class="btn btn-outline-light btn-warning px-5"
+            type="button"
+          >
+            +Add
+          </button>
         </div>
       </div>
     </div>
+    <div class="container">
+      <div>
+        <table id="tblStudents" class="table w-50">
+          <thead class="table-dark">
+            <!-- <tr>
+              <th scope="col" id="index">#</th>
+              <th scope="col" id="name">Name</th>
+              <th scope="col" id="point">Score</th>
+              <th scope="col" id="del"></th>
+            </tr> -->
+          </thead>
+          <tbody id="tbody"></tbody>
+          <!-- <tfoot>
+            <tr>
+              <td colspan="2">Average</td>
+              <td colspan="2"></td>
+            </tr>
+          </tfoot> -->
+        </table>
+      </div>
+    </div>
+    <div class="container">
+      <button id="btnShowLowScores" class="btn show mx-3">
+        Show low scores
+      </button>
+    </div>
 
-    <button id="btnShowLowScores" class="btn show btn-info mx-3">
-      Show low scores
-    </button>
-    <script type="module" src="tablo.js"></script>
+    <script type="module" src="tablo1.js"></script>
   </body>
 </html>
