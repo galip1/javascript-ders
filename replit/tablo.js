@@ -22,6 +22,7 @@ const loadData = () => {
   });
   tblStudentsTbody.innerHTML = strHtml;
 };
+loadData();
 
 /* EVENTS */
 document.getElementById("btnShowLowScores").addEventListener("click", () => {
@@ -62,10 +63,12 @@ document.getElementById("btnAdd").addEventListener("click", () => {
   let name = document.getElementById("name");
   let point = document.getElementById("point");
 
-  if (name) {
+  if (letterInput.value) {
     let id = students.length + 1;
     students.push({ name: name });
+    //students.push({ point: point });
+    loadData();
   }
 });
-loadData();
+
 /* EVENTS */
