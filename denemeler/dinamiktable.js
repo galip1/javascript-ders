@@ -7,16 +7,16 @@ function displayTableData() {
   var html = ` <table border="1|1" class="table"`;
 
   setTimeout(() => {
-    html += ` <thead>`;
-    html += ` <tr>`;
-    html += ` <td>SNo.</td>`;
-    html + ` <td>Laptop Name</td>`;
-    html += ` <td>Model</td>`;
-    html += ` <td>Cost</td>`;
-    html += ` <td>Ram</td>`;
-    html += ` <td>Action</td>`;
-    html += ` </tr>`;
-    html += ` </thead>`;
+    html += ` <thead>
+    <tr>
+    <td>SNo.</td>
+    <td>Laptop Name</td>
+     <td>Model</td>
+    <td>Cost</td>
+    <td>Ram</td>
+   <td>Action</td>
+    </tr>
+     </thead>`;
 
     for (let i = 0; i < laptopData.length; i++) {
       let sno = i + 1;

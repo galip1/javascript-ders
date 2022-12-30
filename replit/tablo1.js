@@ -30,9 +30,11 @@ const displayTableData = () => {
       html += ` <td>${students[i].name}</td>`;
       html += ` <td class="point">${students[i].point}</td>`;
       html += `  <td><button class="btn-degistir btn btn-warning"><i class="fa-solid fa-pen"></i></button>
+
       <button class="btn-add btn btn-warning d-none"><i class="fa-solid fa-check"></i></button>
-      <button class="btn-delete btn btn-danger">🗑️</button>
-      </button>
+
+      <button class="btn-delete btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+     
       <button class="btn-carpım btn btn-danger d-none"><i class="fa-solid fa-xmark"></i></button>
      
       </td>
@@ -62,8 +64,8 @@ document.querySelector("#btnAdd").addEventListener("click", () => {
     students.unshift({ name: name });
 
     displayTableData();
+    name.value = "";
   }
-  name.value = "";
 });
 
 //2-point butonu
@@ -72,18 +74,19 @@ document.querySelector("#btnPoint").addEventListener("click", () => {
 
   if (point) {
     let id = students.length + 1;
-    students.push({ point: point });
+    students.unshift({ point: point });
     displayTableData();
   }
 });
 
-///3-show butonu
+///3-show delete butonu
 document.getElementById("btnShowLowScores").addEventListener("click", () => {
-  const lastTDs = tblStudentsTbody.querySelectorAll("tr td:nth-child(4)");
-  console.log(lastTDs);
+  const lastTDs = tblStudentsTbody.querySelectorAll("tr td.point");
+  //console.log(lastTDs);
+
   lastTDs.forEach((td, index) => {
     if (td.innerText < 50) {
-      td.style.backgroundColor = "red";
+      //  td.style.backgroundColor = "red";
       tblStudentsTbody.querySelector(
         `tr:nth-child(${index + 1})`
       ).style.backgroundColor = "red";
@@ -95,8 +98,8 @@ document.getElementById("btnShowLowScores").addEventListener("click", () => {
 document.querySelectorAll(".btn-delete").forEach((button) => {
   button.addEventListener("click", (e) => {
     e.stopPropagation(); // olayın parent lara aktarılmasını engeller.
-    let trEl = e.target.closest("tr");
-    let name = trEl.querySelector("td").innerText;
+    const trEl = e.target.closest("tbody");
+    const name = trEl.querySelector("td").innerText;
 
     const result = confirm(`Are you sure to delete ${name}?`);
 
@@ -107,6 +110,8 @@ document.querySelectorAll(".btn-delete").forEach((button) => {
     }
   });
 });
+displayTableData();
+
 tblStudentsTbody.querySelectorAll("tr").forEach((tr) => {
   tr.addEventListener("click", (e) => {
     e.target.closest("tr").classList.toggle("table-info");

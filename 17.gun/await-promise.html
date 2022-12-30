@@ -29,9 +29,12 @@
           }, 0);
         });
       };
+
       const init = async () => {
+        //await yalnız asenkronda calısır o nedenlen -async-  yaz
+        //ayrıca try-catch bu sekılde kullanılır
         try {
-          const resp1 = await soz1();
+          const resp1 = await soz1(); //soz 1 ı cagır  bekle.. asenkron waite
           console.log(resp1);
           const resp2 = await soz2();
           console.log(resp2);
@@ -41,7 +44,9 @@
           console.log(error);
         }
       };
-      init();
+      init(); ///fonk cagırma
+
+      //alttakının kısa halı
       /* 
       soz1()
       .then(resp=> {

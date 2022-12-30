@@ -15,7 +15,7 @@ const loadData = () => {
         <td><button class="btn-degistir btn btn-warning"><i class="fa-solid fa-pen"></i></button>
         <button class="btn-add btn btn-warning d-none"><i class="fa-solid fa-check"></i></button>
         <button class="btn-delete btn btn-danger">🗑️</button>
-        </button>
+      
         <button class="btn-carpım btn btn-danger d-none"><i class="fa-solid fa-xmark"></i></button>
         </td>
       </tr>`;
