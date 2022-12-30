@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <style></style>
+  </head>
+  <body>
+    <div class="container">
+      <ul id="liste"></ul>
+      <div>
+        <input type="text" name="yeni" id="yeni" />
+        <input
+          type="button"
+          class="btn btn-success"
+          name="ekle"
+          value="Listem"
+          id="ekle"
+        />
+        <input
+          type="button"
+          class="btn btn-danger"
+          name="sil"
+          value="Sil"
+          id="sil"
+        />
+      </div>
+      <div class="card mt-4" id="metin" style="padding: 2rem"></div>
+    </div>
+    <script>
+      //listeyi ul nin icine li olarak ekleyiniz
+      //sonra butona basilinca yeni eklenenler ile birlikte listeyi gosterelim
+      // sil e basilinca da sirayla sil denilen kisim silinecek ve en sonrada liste  bitti mesaji gosterilecek
+      const notlar = [
+        "Kitap oku.",
+        "Yürüyüşe çık.",
+        "Daily'e katıl.",
+        "Taskini bitir.",
+      ];
+
+      const liste = document.querySelector("#liste");
+      let satir = "";
+
+      for (let not of notlar) {
+        satir += ` <li>${not}</li>`;
+        // console.log(satir);
+      }
+      liste.innerHTML = satir;
+      console.log(liste);
+
+      let veri = document.querySelector("#yeni");
+      document.querySelector("#ekle").addEventListener("click", () => {
+        if (!veri.value) {
+          veri.focus();
+          return;
+        }
+        liste.innerHTML += ` <li>${veri.value}</li>`;
+        notlar.push(veri.value);
+        sonuc(notlar);
+        veri.value = "";
+      });
+
+      document.querySelector("#sil").addEventListener("click", () => {
+        if (notlar.length == 0) {
+          alert("listede silinecek eleman kalmadı");
+        } else {
+          veri.value = "";
+          notlar.pop();
+          liste.removeChild(liste.lastElementChild);
+          sonuc(notlar);
+        }
+      });
+
+      const sonuc = (eklenen) => {
+        document.querySelector("#metin").innerHTML = eklenen.join(" - ");
+      };
+    </script>
+  </body>
+</html>

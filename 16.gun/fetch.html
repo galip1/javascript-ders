@@ -9,8 +9,14 @@
   <body>
     <script>
       fetch("https://api.tvmaze.com/search/shows?q=mountain")
+        //fetch baglantı ıstegı gönderir url ıle
         //baglantı sonucunu görmek ıcın bır cevap gelmesı gerek
+        //backend ebıze bır cevap gönderir yanı responsive
+        //then ile yakalanır
         .then((resp) => {
+          //arrow fank gizli return var. butun bılgılar ilk resp e gelir
+          //bizim istediğimiz json datası
+          //bizi sonrakı then gider yanı ıstedıgımız json datası
           console.log(resp);
           return resp.json();
         })

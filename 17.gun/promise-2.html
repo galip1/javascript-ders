@@ -11,18 +11,26 @@
     <script>
       document.getElementById("btn").addEventListener("click", () => {
         console.log("Clicked");
+
+        // confirm asenkron bir confirm yapmak
+        //yanı uyarı verıınce durmayarak devam edecek aynı zamandaıslam yapacak
         confirmAsync("Are you sure to update").then((resp) =>
+          ///asagıdakı resolve buraya gelir
           console.log(resp)
         );
         //const result = confirm("Are you sure to delete?");
-        //console.log(result);
+        // console.log(result);
         console.log("Ended");
       });
+
+      //  kendi confirm ımız
       const confirmAsync = (msg) => {
         // Promise in kendisi asenkron değil, senkrondur. Asenkron yapılardan veri döndürmek için kullanılır.
+
         return new Promise((resolve) => {
           setTimeout(() => {
             const result = confirm(msg);
+            ///resolve burada result u geri gönderecek
             resolve(result);
           }, 0);
         });

@@ -8,6 +8,7 @@
   </head>
   <body>
     <script>
+      // mesela soz1 kullanıcı olsun
       const soz1 = () => {
         return new Promise((resolve) => {
           setTimeout(() => {
@@ -15,6 +16,8 @@
           }, 0);
         });
       };
+
+      //soz 2 urunler
       const soz2 = () => {
         return new Promise((resolve) => {
           setTimeout(() => {
@@ -22,6 +25,8 @@
           }, 0);
         });
       };
+
+      //soz 3 urunlere aıt baska endpoınt
       const soz3 = () => {
         return new Promise((resolve) => {
           setTimeout(() => {
@@ -29,6 +34,8 @@
           }, 0);
         });
       };
+
+      //burada cagrılıyor
       soz1()
         .then((resp) => {
           console.log(resp);
@@ -41,6 +48,13 @@
         .then((resp) => {
           console.log(resp);
         })
+        .catch((err) => console.log(err));
+
+      /*****/
+      soz1()
+        .then((resp) => soz2())
+        .then((resp) => soz3())
+        .then((resp) => console.log(resp))
         .catch((err) => console.log(err));
     </script>
   </body>

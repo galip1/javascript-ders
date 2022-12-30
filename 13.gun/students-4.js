@@ -14,10 +14,11 @@ const loadData = () => {
   tblStudentsTbody.innerHTML = strHtml;
 };
 loadData();
+
 /* EVENTS */
 document.getElementById("btnShowLowScores").addEventListener("click", () => {
   const lastTDs = tblStudentsTbody.querySelectorAll("tr td.score");
-  console.log(lastTDs);
+  // console.log(lastTDs);
   lastTDs.forEach((td, index) => {
     if (td.innerText < 50) {
       //td.style.backgroundColor = "red";
@@ -27,6 +28,7 @@ document.getElementById("btnShowLowScores").addEventListener("click", () => {
     }
   });
 });
+
 document.querySelectorAll(".btn-delete").forEach((button) => {
   button.addEventListener("click", (e) => {
     e.stopPropagation(); // olayın parent lara aktarılmasını engeller.
@@ -40,6 +42,7 @@ document.querySelectorAll(".btn-delete").forEach((button) => {
     }
   });
 });
+
 tblStudentsTbody.querySelectorAll("tr").forEach((tr) => {
   tr.addEventListener("click", (e) => {
     e.target.closest("tr").classList.toggle("table-info");
