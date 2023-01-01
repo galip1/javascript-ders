@@ -77,7 +77,7 @@ document.querySelector("#btnPoint").addEventListener("click", () => {
 document.querySelector("#btnAdd").addEventListener("click", () => {
   let name = document.getElementById("textInput").value;
 
-  if (name) {
+  if (name || point) {
     let id = students.length + 1;
     students.unshift({ name: name });
 
@@ -86,7 +86,9 @@ document.querySelector("#btnAdd").addEventListener("click", () => {
 });
 
 //6-average
-let average = students.reduce((x, y) => (x + y.point) / students.length, 0);
+let average = students
+  .reduce((x, y) => (x + y.point) / students.length, 0)
+  .toFixed(2);
 document.querySelector("#ortalama").innerHTML = average;
 
 //7-ok ve cancel butonları ekle
