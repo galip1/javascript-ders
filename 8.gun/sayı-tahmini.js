@@ -1,5 +1,5 @@
 let randomNumber = 0; //global bir değişken. hem startan hemde guess den ulaşılır
-//start tan  setter edilir,,guess dend e getter edilir.
+//start tan  setter edilir,,guess den de getter edilir.
 const btnGuess = document.querySelector(".btn-guess");
 const btnStart = document.querySelector(".btn-start");
 const numEl = document.querySelector("#txtNumber");
@@ -82,7 +82,8 @@ const guess = () => {
 
 const generateRandomNumber = (
   min,
-  max //generateRandomNumber dan start a 1-100 arası sayı gitti.
+  max
+  //generateRandomNumber dan start a 1-100 arası sayı gitti.
   //sadece rastgele sayı uretmek ıcın olusturulan bır fonk.
 ) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
