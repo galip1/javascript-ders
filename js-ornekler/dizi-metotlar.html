@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h1 id="sonuc"></h1>
+    <h1 id="s1"></h1>
+    <h1 id="s2"></h1>
+    <h1 id="s3"></h1>
+    <h1 id="s4"></h1>
+    <h1 id="s5"></h1>
+    <script>
+      var dizi = [12, 5, 8, 130, 44, 400];
+      function buyukSayilar(deger) {
+        return deger >= 25;
+      }
+
+      var yeni_dizi = dizi.filter(buyukSayilar);
+
+      document.getElementById("sonuc").innerHTML = yeni_dizi.join("-");
+
+      var mevveler = ["Elma", "Muz"];
+      var sebzeler = ["Brokoli", "Lahana"];
+      var bitkiler = [];
+
+      bitkiler = sebzeler.concat(mevveler);
+      document.getElementById("s1").innerHTML = bitkiler.join("-");
+
+      var dizi = [2, 9, 9];
+      dizi.indexOf(2); // 0
+      dizi.indexOf(7); // -1
+      dizi.indexOf(9, 2); // 2
+      dizi.indexOf(2, -1); // -1
+      dizi.indexOf(2, -3); // 0
+
+      document.getElementById("s2").innerHTML = dizi.indexOf(9, 2);
+
+      //pop() methodu dizideki son değeri diziden atar.
+
+      var mevveler = ["Elma", "Muz", "Üzüm", "Portakal"];
+
+      mevveler.pop();
+      console.log(mevveler);
+
+      //meyveler yeni hali ["Elma", "Muz", "Üzüm"]
+      //son_meyve : "Portakal"
+
+      document.getElementById("s3").innerHTML = mevveler;
+
+      //reverse() methodu diziyi ters çevirir.
+      var meyvele = ["Elma", "Muz", "Üzüm", "Portakal", "Şeftali"];
+      meyvele.sort();
+
+      //meyveler yeni hali: ["Portakal","Üzüm","Muz","Elma"]
+      document.getElementById("s4").innerHTML = meyvele;
+    </script>
+  </body>
+</html>
