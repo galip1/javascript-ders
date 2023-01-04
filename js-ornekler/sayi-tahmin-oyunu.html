@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Butonla Sayı Tahmin Etme Oyunu</h1>
+    <input type="button" id="baslat" value="Oyunu Başlat" />
+    <input type="button" id="tahmin" value="Tahmin Et" disabled />
+    <input type="text" id="sayi" placeholder="Bir sayı girin(0-100)" />
+
+    <h2 id="show"></h2>
+    <script>
+      const baslat = document.querySelector("#baslat");
+      const tahmin = document.querySelector("#tahmin");
+      const sayi = document.querySelector("#sayi");
+      const show = document.querySelector("#show");
+
+      let rsayi,
+        sayac,
+        hak = 3;
+
+      baslat.addEventListener("click", () => {
+        tahmin.disabled = false; // baslat a tıklandıgınd tahmın ın disabled ı kalksın
+        rsayi = Math.round(Math.random() * 100);
+        sayac = 0;
+      });
+
+      tahmin.addEventListener("click", () => {
+        sayac++;
+        //hak kontrolu yapılır
+        if (rsayi != sayi.value && sayac > hak) {
+          show.innerHTML = "hakkınız bitti";
+          tahmin.disabled = true;
+        }
+
+        if (rsayi == sayi.value) {
+          show.innerHTML = "Kazandınız";
+        } else if (sayi.value > rsayi) {
+          show.innerHTML = "Daha küçük sayı giriniz";
+        } else {
+          show.innerHTML = "Daha büyük sayı giriniz";
+        }
+      });
+    </script>
+  </body>
+</html>
