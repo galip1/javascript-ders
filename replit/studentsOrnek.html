@@ -7,9 +7,11 @@
     <title>Document</title>
     <style>
       .table,
+      tbody,
+      tfoot,
       tr,
       td {
-        border: 1px solid black;
+        border: 5px solid black;
       }
 
       .table tfoot tr td:nth-child(1) {
@@ -40,9 +42,15 @@
         <div class="col-md-3 mb-3">
           <input
             class="form-control"
-            id="textInput"
+            id="textName"
             type="text"
             placeholder="Type name..."
+          />
+          <input
+            class="form-control"
+            id="txtPoint"
+            type="number"
+            placeholder="Type point..."
           />
         </div>
         <div class="col-md-3 mb-3">
@@ -65,22 +73,17 @@
       </div>
 
       <div class="container">
-        <table id="tblStudents" class="table w-50">
-          <thead class="table-dark">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Name</th>
-              <th scope="col">Score</th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody></tbody>
+        <table id="table" class="table w-50">
+          
+         
           <tfoot>
-            <tr>
+             <tr>
               <td colspan="2">Average</td>
               <td id="ortalama" colspan="2"></td>
-            </tr>
+            </tr> 
           </tfoot>
+           
+          
         </table>
       </div>
     </div>
@@ -89,6 +92,7 @@
         Show low scores
       </button>
     </div>
-    <script type="module" src="/assets/js/studentsOrnek.js"></script>
+    <h1 id="yaz"></h1>
+    <script src="/assets/js/studentsOrnek.js"></script>
   </body>
 </html>
