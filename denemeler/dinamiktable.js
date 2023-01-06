@@ -4,7 +4,7 @@ var laptopData = [
 ];
 
 function displayTableData() {
-  var html = ` <table border="1|1" class="table"`;
+  var html = ` <table border="1px solid red" class="table"`;
 
   setTimeout(() => {
     html += ` <thead>
@@ -30,6 +30,7 @@ function displayTableData() {
       html += ` </tr>`;
     }
     html += ` </thead>`;
+    html += ` </table>`;
     document.getElementById("table").innerHTML = html;
   }, 200);
 }
