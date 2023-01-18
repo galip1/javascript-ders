@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //fetch de bir promıse dönurur
+      // söz veren bir fonksiyon
+      //promise iç içe calback lerın alternatifi olarak kullanabilir
+
+      const soz = () => {
+        return new Promise((resolve, reject) => {
+          // Bu bölümde asenkron çalışan çeşitli kodlar olabilir
+          // ve bu kodlar geriye değerler döndürebilir.
+
+          const result = true; //false
+
+          if (result) {
+            resolve({ firstName: "Ali", lastName: "Gel" });
+          } else {
+            reject("Bir hata oluştu");
+          }
+        });
+      };
+
+      soz()
+        .then((resp) => console.log(resp))
+        .catch((err) => console.log(err));
+
+      /************/
+      const ornek = () => {
+        //callback fonk
+        //resolve --olumlu
+        //reject-olumsuz
+        return new Promise((resolve, reject) => {
+          if (herseyYolunda) {
+            resolve("işlem tamam");
+          } else {
+            reject("bir problem var");
+          }
+        });
+      };
+
+      ornek()
+        .then((cevap) => {
+          console.log(cevap);
+        })
+        .catch((hata) => {
+          console.log(hata);
+        });
+
+      // new Promise((resolve, reject) => {
+
+      // })
+    </script>
+  </body>
+</html>
